@@ -1,0 +1,869 @@
+﻿td.jornales h3
+        {
+            width: 90%;
+            margin-bottom: 3px;
+            background-color: #f60;
+            cursor: pointer;
+            color: white;
+            text-align: center;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+        input.surcos.intValidate
+        {
+            width: 23px;
+        }
+        span.removeJornal {
+            background: red;
+            background-color: red;
+            border-radius: 8px;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+            cursor: pointer;
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-left:5px;
+            height:14px;
+        }
+       #EquiposHead div.tab
+        {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+        span.addJornal 
+        {
+                float: right;
+            background: green;
+            background-color: green;
+            border-radius: 8px;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+            cursor: pointer;
+            padding-left: 2px;
+            padding-right: 2px;
+            margin-left:1px;
+        }
+        td.jornales.fill
+        {
+            border-color: red;
+            border-radius: 4px;
+            border-width: 2px;
+        }
+        tr[idinvernadero] td img
+        {
+            width: 30px;
+        }
+        .Error
+        {
+            border: 1px solid red;
+            background: rgba(255,0,0,0.2)!important;
+        }
+        .Infestacion
+        {
+            border: 1px solid red;
+            background: rgb(244,209,1)!important;
+        }
+        tr.habilidadDeDirectriz {
+            /*background-image: url("../img/star.png");
+            background-size: 15px;
+            background-repeat: no-repeat;*/
+            background: #E0ECC5;
+        }
+        #calendar
+        {
+            width: 900px;
+        }
+        .slick-slide
+        {
+            width: 60px !important;
+            cursor: pointer;
+            display: none;
+        }
+        .stick-prev
+        {
+            background: inherit;
+        }
+        .slick-active
+        {
+            display: block !important;
+        }
+        #rollslider div
+        {
+            width: 748px;
+        }
+        #rollslider2 div
+        {
+            width: 800px;
+        }
+        .invernaderos
+        {
+            padding: 0 25px;
+        }
+        .habilidades
+        {
+            padding: 0 25px;
+        }
+        .clicked
+        {
+            background: #3f3f3f; /* Old browsers */
+            background: -moz-linear-gradient(top,  #3f3f3f 0%, #cccccc 77%, #f2f2f2 99%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f3f3f), color-stop(77%,#cccccc), color-stop(99%,#f2f2f2)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #3f3f3f 0%,#cccccc 77%,#f2f2f2 99%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #3f3f3f 0%,#cccccc 77%,#f2f2f2 99%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #3f3f3f 0%,#cccccc 77%,#f2f2f2 99%); /* IE10+ */
+            background: linear-gradient(to bottom,  #3f3f3f 0%,#cccccc 77%,#f2f2f2 99%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+            -webkit-box-shadow: inset 0px 3px 3px 3px rgba(0,0,0,0.5);
+            box-shadow: inset 0px 3px 3px 3px rgba(0,0,0,0.5);
+        }
+        .selected
+        {
+            border: 1px solid #adc995;
+            -webkit-box-shadow: 0px 0px 3px 3px #adc995;
+            box-shadow: 0px 0px 3px 3px #adc995;
+        }
+        .panel-heading
+        {
+            padding: 10px;
+            background: #000000 !important;
+            font-size: 18px;
+            font-variant: small-caps;
+            color: #FFFFFF;
+        }
+        .panel-heading input
+        {
+            float: left;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        #divTareasProgramadas table
+        {
+            width: 100%;
+        }
+        h2 {
+    color: #ADC995;
+    margin: 0;
+    display: table;
+    width:auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 19px;
+}
+        h3.accordionHeader
+        {
+            display: block;
+            text-align: left;
+            padding-bottom: 3px;
+            padding-top: 8px;
+            background-color: #ADC995;
+            color: white;
+            font-size: 18px;
+            border: 1px solid #E5EED2;
+            width: 100%;
+        }
+        .accordionBody td
+        {
+            border: 1px solid;
+            border-color: #E5F1E5;
+        }
+        .accordionBody th
+        {
+            background-color: #FEE435;
+            text-align: center; /* width: 100px !important; */
+        }
+        .accordionBody input
+        {
+            max-width: 105px;
+        }
+        .accordionBody
+        {
+            width: 99%;
+        }
+        #popUpHabilidades
+        {
+            position: absolute;
+            width: 90%;
+            height: 80%;
+            background: white;
+            top: 20%;
+            z-index: 9999;
+            left: 5%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 1px solid #cccccc;
+            max-width: 90%;
+            -moz-box-shadow: 0 0 9px #999999;
+            -webkit-box-shadow: 0 0 9px #999999;
+            box-shadow: 0 0 9px #999999;
+            display: none;
+        }
+        #popUpActividad
+        {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            top: 0% !important;
+            z-index: 99999;
+            left: 0%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 1px solid #cccccc;
+            max-width: 100%;
+            -moz-box-shadow: 0 0 9px #999999;
+            -webkit-box-shadow: 0 0 9px #999999;
+            box-shadow: 0 0 9px #999999;
+            display: none;
+        }
+        #popUpCalendario
+        {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: white;
+            top: 0% !important;
+            z-index: 9999;
+            left: 0%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 1px solid #cccccc;
+            max-width: 100%;
+            -moz-box-shadow: 0 0 9px #999999;
+            -webkit-box-shadow: 0 0 9px #999999;
+            box-shadow: 0 0 9px #999999;
+            display: none;
+        }
+        div.popUpHeader
+        {
+            background: #000080;
+            height: 42px;
+            width: 100%;
+            color:yellow;
+        }
+        div#divHabilidades
+        {
+            width: 100%;
+            height: 80%;
+            overflow: auto;
+        }
+        div.popUpBotones
+        {
+            width: 100%;
+            height: 40px;
+            bottom: 0px;
+            background: #F4D101;
+        }
+        
+        .btnHabilidad span
+        {
+            font-size: 10px;
+            display: block;
+        }
+        .btnHabilidad
+        {
+            width: 60px;
+            height: 60px;
+            margin: 7px;
+            border: 6px solid gray;
+            font-size: 26px;
+            border-radius: 5px;
+        }
+        div#popupDetalleConfiguracionInvernadero
+        {
+            position:fixed;
+            top:250px;
+            background-color : White;
+        }
+        .divHabilidadProgramable
+        {
+            display: inline-table;
+            background: #F0F5E5;
+            margin: 1px;
+            padding-bottom: 5px;
+        }
+        .divHabilidadProgramable span
+        {
+            display: block;
+            margin-left: 15px;
+        }
+        
+        span.habilidad_icono
+        {
+            font-size: 22px;
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+        }
+        span.habilidad_descripcion
+        {
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 8px;
+        }
+        span.habilidad_etapa
+        {
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 11px;
+            color: #000;
+            text-shadow: rgba(224, 224, 224,.5) 1px 1px 0px;
+            margin-top: 2px;
+        }
+        .habilidadDeDirectriz
+        {
+            background: #F7F8E0;
+        }
+        .invisible
+        {
+            display: none;
+        }
+        .starImage
+        {
+            width: 18px;
+            margin: 5px;
+            display: block;
+        }
+        .btnImage
+        {
+            width: 32px;
+            padding: 10px;
+            margin: 5px 3px;
+            border: 1px solid #000;
+            background: #ffffff;
+            background: -moz-linear-gradient(top, #ffffff 0%, #cdcdcd 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#cdcdcd));
+            background: -webkit-linear-gradient(top, #ffffff 0%,#cdcdcd 100%);
+            background: -o-linear-gradient(top, #ffffff 0%,#cdcdcd 100%);
+            background: -ms-linear-gradient(top, #ffffff 0%,#cdcdcd 100%);
+            background: linear-gradient(to bottom, #ffffff 0%,#cdcdcd 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cdcdcd',GradientType=0 );
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            cursor: pointer;
+        }
+        #calendar
+        {
+            width: 97%;
+            margin-left: 1%;
+            background: #FFF;
+        }
+        #popUpFechaHora
+        {
+            background: rgba(0,0,0,0.5);
+        }
+        
+        input.surcos
+        {
+            width: 40px;
+        }
+        .switchB
+        {
+            display: none;
+        }
+        .jornales ul
+        {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .jornales ul li
+        {
+                display: inline-flex;
+            background: rgba(255,255,255,0.3);
+        }
+        .jornales ul li input[type="checkbox"]
+        {
+            display: table-cell;
+            margin-top: 3px;
+        }
+        .jornales ul li label
+        {
+            display: table-cell;
+        }
+        
+       #SelectorInterior 
+       {
+           background:#fff; border:2px solid black; width:354px; margin:0 auto;  -moz-border-radius:6px;
+            -webkit-border-radius:6px;
+            border-radius:6px;
+            }
+  
+  #ActivityData input[type="text"]
+  {
+      width:110px;
+  }
+  
+  #ActivityData 
+  {
+      margin-top:20%;
+      margin-left:35%;
+      background:#fff; 
+      border:2px solid black; 
+      width:435px; 
+      -moz-border-radius:6px;
+      -webkit-border-radius:6px;
+    border-radius:6px;
+  }
+  #popUpAsociados
+   {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            top: 0% !important;
+            z-index: 100000;
+            left: 0%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: 1px solid #cccccc;
+            max-width: 100%;
+            -moz-box-shadow: 0 0 9px #999999;
+            -webkit-box-shadow: 0 0 9px #999999;
+            box-shadow: 0 0 9px #999999;
+            display: none;
+        }
+        div#asociadosFam
+        {
+      margin-top:2%;
+      margin-left:35%;
+      background:#fff; 
+      border:2px solid black; 
+      width:350px; 
+      -moz-border-radius:6px;
+      -webkit-border-radius:6px;
+    border-radius:6px;
+  }
+  div#asociadosHead
+  { 
+      width:100%;
+      width:auto;
+  }
+  div#EquiposHead
+  { 
+      width:100%;
+      width:auto;
+  }
+   
+  div#asociadosData
+  { 
+    max-height: 360px;
+    min-height: 200px;
+    overflow:auto;
+    /* AGREGADOS POR JAVIER SALAS */
+    background: #F0F5E5;
+    margin-bottom: 1em;
+    border: solid 1px #000;
+    border-top: none;
+  }
+  
+  div#EquiposData
+  {
+      display: none;
+    max-height: 360px;
+    min-height: 200px;
+    overflow: auto;
+    background: #F0F5E5;
+    margin-bottom: 1em;
+    border: solid 1px #000;
+  }
+  div#asociadosHead div.tab
+  { 
+      display: table-cell;
+    border: solid;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 2%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .equipoDropdown
+  {
+      width:10%;
+  }
+  div.NombreEquipo
+  {
+      display: flex;
+      width:100%;
+      
+  }
+  span.equipoDropdown:hover
+  {
+      background-color:#ADC995;
+  }
+   div.NombreEquipo:hover
+  {
+      display: flex;
+      width:100%;
+      background-color:#dddddd;
+  }
+  div.NombreEquipo span
+  {
+      width:90%;
+  }
+  div.NombreEquipo span:not(.equipoDropdown):hover
+  {
+      width:90%;
+      background-color:#ADC995;
+  }
+  div.NombreEquipo span.equipoDropdown
+  {
+      width:10%;
+      padding-left:6%;
+      background-color:#eeeeee;
+  }
+  
+  div#EquiposHead div.tab
+  { 
+    display: table-cell;
+    border: solid;
+    border-bottom:none;
+    border-width: 1px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 2%;
+    text-align: center;
+    cursor: pointer;
+  }
+   ul li.asociadoAgregar
+  {
+      cursor:pointer;
+      display:table-row-group;
+  }
+  ul li.lEquipo
+  {
+      cursor:pointer;
+      display:block;
+  }
+  ul.lEquipoAsoc {
+    padding-left: 7px;
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+}
+div#EquiposData ul
+{
+    padding-left: 15px;
+    text-overflow:ellipsis;
+}
+   ul li.asociadoAgregar:hover
+  {
+      background-color:#dddddd;
+  }
+  .added
+  {
+      background-color: rgba(0, 128, 0, 0.44);
+}
+ul li.asociadoAgregar.added:hover
+  {
+      background-color: rgba(128, 0, 30, 0.44);
+  }
+  textarea.coment
+  {
+      max-height:123px;
+      max-width:570px;
+  }
+  .loading
+  {
+      background-image: url("../img/loading.gif");
+  }
+
+  /* CSS APLICADOS POR JAVIER SALAS */
+
+          input#BuscaAsociados {
+           width: 80%;
+           margin: 20px 10%; 
+        }
+        
+        li.asociadoAgregar
+        {
+            margin-bottom: 5px;
+            }
+            
+        div#asociadosFam
+        {
+            padding-top: 0;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            }
+            
+        input#ActividadSurcos
+        {
+            margin-top:13px;
+            }
+            
+        table
+        {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            }
+        .habilidadHead
+        {
+            min-width:150px;
+            }
+            
+        .habilidadHead Directriz
+        {
+            background-image: url(../img/star.png);
+	        background-repeat: no-repeat;
+	        background-position: right top;
+            }    
+.sent
+{
+    background-image:url("../img/SavedActivity.png");
+    
+}
+
+.saved
+{
+     background-image:url("../img/save__correct_32x32.png");
+}
+
+.editable
+{
+     background-image:url("../img/EditActivity.png");
+}
+
+.blocked
+{
+    background-image:url("../img/Activity_prohibed.png");
+}
+
+table thead tr .Directriz
+{
+    background-image: url(../img/star.png);
+}
+    
+.Directriz
+{
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: 5px;
+}
+    
+    .tabladirectriz
+    {
+        background: #9DA529;
+    }
+    
+    div.Infested
+    {
+        background-image: url(../img/mosca.jpg);
+                    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: 0px;
+    background-position-y: 0px;
+    }
+    div.Fumigacion
+    {
+        background-image: url(../img/icon_bioh_20x20.png);
+            background-size: 20px;
+	        background-repeat: no-repeat;
+	        background-position: 17px;
+	        background-position-y:2px;
+    }
+    input[type="text"].Colmena, input.elementos.cajaChica.switchA.intValidate.required
+    {
+            width: 23px;
+    }
+    table.index tr td input[type="text"],input[type="checkbox"].chkColmena {
+    float: initial !important;
+    font-size: 12px;
+}
+
+label.Colmena
+{
+    margin:0px;
+}
+    
+/*Animaciones*/
+
+.hint { transition: all .1s ease-in-out; }
+.hint:hover { transform: scale(1.3); }       
+       
+       
+.new-item {
+  opacity: 0;
+  -webkit-animation: new-item-animation .3s linear forwards;
+  -o-animation: new-item-animation .3s linear forwards;
+  animation: new-item-animation .3s linear forwards
+}
+
+@keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.restored-item {
+  -webkit-animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s cubic-bezier(0,.8,.32,1.07) forwards;
+  -o-animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s cubic-bezier(0,.8,.32,1.07) forwards;
+  animation: openspace .3s ease forwards, 
+    restored-item-animation .3s .3s cubic-bezier(0,.8,.32,1.07) forwards
+}
+
+@keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@keyframes restored-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+.removed-item {
+  -webkit-animation: removed-item-animation .6s cubic-bezier(.55,-0.04,.91,.94) forwards;
+  -o-animation: removed-item-animation .6s cubic-bezier(.55,-0.04,.91,.94) forwards;
+  animation: removed-item-animation .6s cubic-bezier(.55,-0.04,.91,.94) forwards
+}
+
+@keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+
+  to {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    opacity: 0
+  }
+}
+
+@-webkit-keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-o-keyframes new-item-animation {
+  from {
+    opacity: 0;
+    -o-transform: scale(0);
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@-o-keyframes openspace {
+  to {
+    height: auto
+  }
+}
+
+@-webkit-keyframes restored-item-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-o-keyframes restored-item-animation {
+  from {
+    opacity: 0;
+    -o-transform: scale(0);
+    transform: scale(0)
+  }
+
+  to {
+    opacity: 1;
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+
+  to {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0
+  }
+}
+
+@-o-keyframes removed-item-animation {
+  from {
+    opacity: 1;
+    -o-transform: scale(1);
+    transform: scale(1)
+  }
+
+  to {
+    -o-transform: scale(0);
+    transform: scale(0);
+    opacity: 0
+  }
+}
+
+    

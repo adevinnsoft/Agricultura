@@ -1,0 +1,137 @@
+﻿ 
+        HTML, BODY {
+            display: block;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            /*overflow: hidden;*/
+            font-family: sans-serif;
+        }
+        #pan_superior {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 140px;
+            overflow: hidden;
+            background-color: #E0E0E0;
+            text-align: center;
+        }
+        #pan_inferior {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 32px;
+            overflow: hidden;
+            background-color: #FF8A01;
+            text-align: center;
+            font-size: 13px;
+        }
+        #pan_central {
+            position: absolute;
+            top: 140px;
+            bottom: 32px;
+            left: 0;
+            right: 0;
+            background-color: #E0E0E0;
+        }
+        #pan_izquierdo {
+            height: 100%;
+            overflow-y: scroll;
+            width: 200px;
+            float: left;
+            background-color: #A0C0F0;
+            text-align: center;
+        }
+        #pan_derecho {
+            height: 100%;
+            overflow-y: scroll;
+            width: 100px;
+            float: right;
+            background-color: #A0C0E0;
+            text-align: center;
+        }
+        #pan_centro {
+            overflow: scroll;
+            height: 100%;
+            background-color: #F0F0F0;
+        }
+ .margen { /* Estilo */
+  padding:16px;
+  }
+ #gridContainer {
+    height: auto;
+    width: 100%;
+}
+     .calendar{
+            width:300px;
+            float:left;
+        }
+
+        .label{
+            width:auto;
+            float:left;
+            margin-left:30px;
+        }
+                 
+
+        #dx-field {
+    display: inline-block;
+    margin-left: 40px;
+}
+  
+.button-0 {
+    position: relative;
+    padding: 10px 40px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+    border-radius: 10px;
+    font-family: 'Helvetica', cursive;
+    font-size: 25px;
+    color: #FFF;
+    text-decoration: none;  
+    background-color: #3498DB;
+    border-bottom: 5px solid #2980B9;
+    text-shadow: 0px -2px #2980B9;
+    /* Animation */
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+}
+
+       .button-0:hover {
+       color: #fff;
+       background-color: #2980B9;
+       cursor:pointer;
+       } 
+       
+.button-0:focus {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button-0:active {
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+    border-bottom: 1px solid;
+}
+ 
+           .pivotgrid-demo .plantacss {
+            color: #bfae6a;
+            font-weight: bold;
+        }
+
+        #pivotgrid-demo > .dx-button {
+            margin: 10px 0;
+        }
+
+        #pivotgrid-demo .desc-container a {
+            color: #f05b41;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+            #pivotgrid-demo .desc-container a:hover {
+                text-decoration: none;
+            }
+  

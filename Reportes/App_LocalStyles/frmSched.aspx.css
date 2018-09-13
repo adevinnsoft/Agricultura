@@ -1,0 +1,97 @@
+ div#popUpActions
+{
+    padding: 10px;
+    border: 2px solid #ADC995;
+    width: 210px;
+    display: inline-block;
+    background: #F0F5E5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display:none;
+}
+        
+div#popUpActions ol
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+        
+div#popUpActions ol li
+{
+    width: 190px;
+    border: 1px solid #ADC995;
+    padding-left: 15px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    text-align: left;
+    background:#ADC995;
+    color:Black;
+}
+        
+div#popUpActions ol li:hover
+{
+    background: orange;
+    color: white;
+}
+        
+div#popUpActions ol li img
+{
+    width:12px;   
+    margin-left:-8px;
+    padding-right:8px; 
+}
+/*
+.precosecha, .plantacion, .suelo, .corte, .cambio
+{
+    cursor:pointer;    
+}
+.normal{ cursor: crosshair;}
+*/     
+.precosecha, .plantacion, .suelo, .corte, .cambio, .normal
+{
+    white-space: nowrap;
+    padding: 2px !important;
+}
+.primerCorte,.corte { background: #000080; color: #fff; }
+.precosecha { background: #87CEFA;}
+.plantacion { background-color: yellow;} 
+.suelo { background: #B4B4B4; color: #fff; text-align:center; } 
+
+
+.falla{background:Black;color:White;}
+.greenCell{color: white; background: #238D23; border: black; text-align:center;}
+.ni { color: green; background-color: gray; text-align:center;}
+.ni2 { color: Blue; background: gray; text-align:center; }
+.title1 { background: white; color: Black; text-align:center;}
+.blueColor{ color:Blue !important;}
+.redColor{ color:Red !important;}
+.greenColor{ color:Green !important;}
+.greenCellBack{ background:#D4FFD4;}
+.bigBorder{ border-top: 3px solid black !important; border-bottom:3px solid black !important;}
+.separador{ background:gray; color:White; border-top: 3px solid black !important; border-bottom:3px solid black !important;}
+.blackCell{ background:black; color:white;}
+.grayCell{ background:#CDCDCD/*808080*/; color:black;}
+.cambio{ background:#000; color:#FFF;}
+
+.suelo.cicloEnMovimiento{background:#8A8A8A; cursor: all-scroll;}
+.plantacion.cicloEnMovimiento{background:#A7A7A7; cursor: all-scroll;}
+.precosecha.cicloEnMovimiento{background:#D2D2D2; cursor: all-scroll;}
+.corte.cicloEnMovimiento{background:#4A4A4A; cursor: all-scroll;}
+.smallBox
+{
+    width:20px;
+}
+    
+.bloqueado{ background: #CDCDCD;  color:Gray; cursor: no-drop !important;}
+.suelo.bloqueado{background:#E7E2E2; }
+.plantacion.bloqueado{background:#FFFFAA; }
+.precosecha.bloqueado{background:#B2DCF5; }
+.corte.bloqueado{background:#464693;}
+.cambio.bloqueado{background:#525252;}
+
+

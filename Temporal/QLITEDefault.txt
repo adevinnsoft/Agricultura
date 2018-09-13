@@ -1,0 +1,1175 @@
+﻿
+              CREATE TABLE IF NOT EXISTS Checksum ( 
+                     	checksum integer	 
+                     ) 
+
+            |  insert into  Checksum (checksum) 
+                     	values (-1) 
+
+            |  CREATE TABLE IF NOT EXISTS tblOwner ( 
+                     	idUsuario TEXT, 
+                     	idEmpleado INTEGER, 
+                     	usuario text, 
+                     	password text, 
+                     	nombre text, 
+                     	rol text, 
+                     	url text 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS DataCode ( 
+                     	idDataCode integer primary key autoincrement,	 
+                     	Key text, 
+                     	start text, 
+                     	end text, 
+                     	week integer, 
+                     	year integer, 
+                     	estatus INTEGER , 
+                     	fechaUltimaModificacion INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS InvernaderoWppDos ( 
+                     ID_INVERNADERO integer, 
+                     N_INVERNADERO text, 
+                     ID_TECNOLOGIA integer, 
+                     ID_CENTRO_TRABAJO integer, 
+                     ZONA text, 
+                     estatus integer, 
+                     fechaUltimaModificacion integer, 
+                     numSurcos integer 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS EtapaWppDos ( 
+                     idEtapa INTEGER NOT NULL , 
+                     idHabilidad INTEGER NOT NULL , 
+                     idNivel INTEGER NOT NULL , 
+                     esPorTiempo INTEGER NOT NULL , 
+                     etapaClave TEXT NOT NULL , 
+                     etapaClaveEN TEXT NOT NULL , 
+                     importeHora REAL NULL , 
+                     target integer NULL , 
+                     estatus INTEGER NOT NULL , 
+                     fechaUltimaModificacion INTEGER NOT NULL,  
+                     activo INTEGER NULL  
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblCheckList ( 
+                     	idCheckListLocal integer primary key autoincrement,	 
+                     	idCheckList integer,	 
+                     	idInvernadero integer, 
+                     	idLiderCultivo integer, 
+                     	idLiderCosecha integer, 
+                     	idTipo integer, 
+                     	fechaElaboracion integer, 
+                     	observaciones text, 
+                     	estatusAutorizado integer, 
+                     	estatus integer, 
+                     	UUID TEXT, 
+                     	autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblCheckCriterio ( 
+                     	idCheckCriterioLocal integer primary key autoincrement,	 
+                     	idCheckCriterio integer,	 
+                     	idCheckListLocal integer,	 
+                     	idCheckList integer,	 
+                     	idCriterio integer, 
+                     	compromiso text, 
+                     	estatus integer, 
+                     	UUID TEXT, 
+                     	autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblParametros ( 
+                     	idParametro integer, 
+                     	idTipo integer,                 
+                     	nombreEs text, 
+                     	nombreEn text 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblCriterios ( 
+                     	idCriterio integer,	 
+                     	idParametro integer, 
+                     	nombreEs text, 
+                     	nombreEn text 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS HabilidadWppDos ( 
+                     idHabilidad INTEGER NOT NULL , 
+                     color TEXT NOT NULL , 
+                     habilidadClave TEXT NOT NULL , 
+                     habilidadClaveEN TEXT NOT NULL , 
+                     habilidadClaveCorto TEXT NOT NULL , 
+                     habilidadClaveCortoEN TEXT NOT NULL , 
+                     idDepartamento INTEGER NOT NULL , 
+                     IdPlanta INTEGER NOT NULL , 
+                     estatus INTEGER NOT NULL , 
+                     fechaUltimaModificacion TEXT NOT NULL,  
+                     activo INTEGER NULL,  
+                     borrado INTEGER NULL 
+                     )  
+
+            |  CREATE  TABLE IF NOT EXISTS SeccionWppDos ( 
+                     idSeccion INTEGER NOT NULL , 
+                     idInvernadero TEXT NOT NULL , 
+                     activo INTEGER , 
+                     NombreSeccion TEXT , 
+                     FechaModifico INTEGER , 
+                     UsuarioModifico TEXT , 
+                     estatus INTEGER NOT NULL, 
+                     fechaUltimaModificacion INTEGER NOT NULL 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS SurcoWppDos ( 
+                     idSurco INTEGER NOT NULL , 
+                     idSeccion INTEGER NOT NULL , 
+                     activo INTEGER NOT NULL , 
+                     ClaveSurco INTEGER , 
+                     longitud INTEGER NOT NULL , 
+                     estatus INTEGER NOT NULL, 
+                     esRND INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS ActividadProgramaWppDos ( 
+                     	idActividadProgramaLocal integer primary key autoincrement, 
+                     	idActividadPrograma integer, 
+                     	idInvernadero integer, 
+                     	idEtapa integer, 
+                     	idCiclo integer, 
+                     	cantidadDeElementos integer, 
+                     	jornalesEstimados integer, 
+                     	minutosEstimados integer, 
+                     	esDirectriz integer, 
+                     	esInterplanting integer, 
+                     	repeticionesDeActividadEnCiclo integer, 
+                     	aprobadaPor integer, 
+                     	rechazadaPor integer, 
+                     	usuarioModifica integer, 
+                     	fechaModifica integer, 
+                     	borrado integer, 
+                     	indice integer, 
+                      	estatus INTEGER NOT NULL,  
+                     	surcoInicio integer,  
+                        surcoFin integer,  
+                        esColmena integer, 
+                     	UUID TEXT, 
+                     	autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS ActividadPeriodoWppDos ( 
+                     	idActividadPeriodoLocal integer primary key autoincrement, 
+                     	idActividadPeriodo integer, 
+                     	idActividadProgramaLocal integer, 
+                     	idActividadPrograma integer, 
+                     	surcos integer, 
+                     	inicio TEXT , 
+                     	fin TEXT , 
+                     	estatus INTEGER NOT NULL, 
+                     	UUID TEXT, 
+                     	autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS ActividadAsociadosWppDos ( 
+                     idAsociadoActividadLocal integer primary key autoincrement,  
+                     idAsociadoActividad INTEGER NOT NULL , 
+                     idActividadProgramaLocal INTEGER ,        
+                     idActividadPrograma INTEGER NOT NULL, 
+                     idActividadPeriodoLocal INTEGER, 
+                     idActividadPeriodo INTEGER NOT NULL,  
+                     idAsociado INTEGER NOT NULL, 
+                     estatus INTEGER NOT NULL, 
+                     ausente INTEGER DEFAULT 0, 
+                     autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS PlantasWppDos ( 
+                     	idPlanta integer, 
+                     	NombrePlanta text, 
+                     	NombreCorto text, 
+                     	horaInicio integer, 
+                     	minutoInicio integer, 
+                     	horaFin integer, 
+                     	minutoFin integer, 
+                     	diaInicioSemana integer, 
+                     	permiteColmena INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS AsociadoNivelWppDos ( 
+                     	idAsociadoNivel integer, 
+                     	idAsociado integer, 
+                     	idLider integer, 
+                     	idNivel integer, 
+                     	NOMBRE text 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS NivelWppDos ( 
+                     	idNivel integer, 
+                     	Nivel integer, 
+                     	idFamilia integer 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS DirectrizWppDos ( 
+                      IdHabilidad integer, 
+                     	SoloEjecutable integer, 
+                     	Directriz integer, 
+                     	Repeticiones integer, 
+                     	IdEtapa integer, 
+                     	Target integer, 
+                     	surcos integer, 
+                     	Densidad integer, 
+                     	porSurco integer, 
+                     	idCiclo integer, 
+                     	Semana integer, 
+                     	IdInvernadero integer, 
+                     	NombreCorto text, 
+                     	NombreCorto_EN text, 
+                     	NombreHabilidad text, 
+                     	NombreHabilidad_EN text, 
+                     	NombreEtapa text, 
+                     	NombreEtapa_EN text, 
+                     	Color text, 
+                     	numeroElementos INTEGER, 
+                     	elemento TEXT, 
+                     	elementoEN TEXT, 
+                     	edad INTEGER, 
+                     	esInterplanting 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS TemporalWppDos ( 
+                        idTemporal integer, 
+                     	FechaStart TEXT , 
+                     	FechaEnd TEXT , 
+                     	FechaModifico TEXT  
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS CiclosWppDos ( 
+                        idCycle integer, 
+                        IdInvernadero integer, 
+                        WeekShort integer, 
+                        Year integer, 
+                        Variety integer, 
+                        Variable integer, 
+                        Week text, 
+                        FirstHarvestWeek text, 
+                     	PlantDate TEXT , 
+                     	FirstHarvest TEXT , 
+                     	LastHarvest TEXT , 
+                     	Density integer, 
+                     	product TEXT, 
+                     	complete INTEGER, 
+                     	experiment TEXT, 
+                     	medium INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS RazonDirectrizWppDos ( 
+                        idDirectrizRechazo integer, 
+                        Rechazo text, 
+                        Rechazo_EN text, 
+                        Descripcion text, 
+                        Descripcion_EN text 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS PlagaEnfermedadWppDos ( 
+                     idPlaga INTEGER NOT NULL , 
+                     nombreCientifico TEXT NOT NULL , 
+                     nombreComun TEXT NOT NULL , 
+                     esPlaga INTEGER NOT NULL, 
+                     minimo INTEGER NOT NULL, 
+                     maximo INTEGER NOT NULL 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS CapturaPlagaEnfermedadWppDos ( 
+                     idPlagaEnfermedad INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL , 
+                     idPlagaEnfermedadRemoto INTEGER NULL , 
+                     idInvernadero INTEGER NOT NULL , 
+                     idPlaga INTEGER , 
+                     idPercance INTEGER,  
+                     idZona INTEGER,  
+                     nombreCientifico TEXT , 
+                     nombreComun TEXT , 
+                     esPlaga INTEGER, 
+                     surcoDe INTEGER , 
+                     surcoA INTEGER , 
+                     ubicacion TEXT , 
+                     fechaCaptura TEXT NOT NULL, 
+                     estado INTEGER NOT NULL, 
+                     observaciones TEXT NULL, 
+                     base INTEGER , 
+                     nivelInfestacion INTEGER, 
+                     estatus INTEGER NOT NULL, 
+                     cantidad INTEGER, 
+                     UUID TEXT, 
+                     autoSync INTEGER DEFAULT 0 
+                     )  
+
+
+            |  CREATE TABLE IF NOT EXISTS CosechaWppDos (  
+                     idCosechaLocal  integer primary key autoincrement,  
+                     idCosecha integer,  
+                     idActividadProgramaLocal integer, 
+                     idActividadPrograma integer,  
+                     cerrarada INTEGER NOT NULL ,  
+                     estatus integer NULL,  
+                     fechaInicio INTEGER NULL,  
+                     fechaFin INTEGER NULL, 
+                     estimadoMedioDia REAL, 
+                     autoSync INTEGER DEFAULT 0,
+					 cajasProyeccion INTEGER,
+					 UUID TEXT
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS MermaCosechaWppDos (  
+                     idMermaLocal  integer primary key autoincrement,  
+                     idMerma integer NOT NULL ,  
+                     idCosechaLocal INTEGER , 
+                     idCosecha integer NOT NULL ,  
+                     idRazon INTEGER NULL ,  
+                     cantidad INTEGER NULL,  
+                     observacion TEXT NULL,  
+                     estatus integer NULL, 
+                     UUID TEXT, 
+                     autoSync INTEGER DEFAULT 0 
+                     )  
+
+
+            |  CREATE TABLE IF NOT EXISTS FormaAWppDos ( 
+                     idFormaALocal  integer primary key autoincrement,  
+                     idFormaA  integer,  
+                     idProgramaLocal INTEGER  , 
+                     idPrograma INTEGER  , 
+                     folio TEXT NOT NULL , 
+                     fechaInicio TEXT NULL, 
+                     fechaFin TEXT NULL, 
+                     cerrado INTEGER NULL, 
+                     estatus INTEGER NULL, 
+                     prefijo TEXT, 
+                     dmcMercado TEXT, 
+                     dmcCalidad TEXT, 
+                     comentarios TEXT, 
+                     fechaInicioTractorista TEXT, 
+                     fechaFinTractorista TEXT, 
+                     storage TEXT, 
+                     autoSync INTEGER DEFAULT 0, 
+                     UUID TEXT,
+					 preharvest INTEGER
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS CapturaFormaAWppDos ( 
+                     idCapturaFormaALocal  integer primary key autoincrement,  
+                     idCapturaFormaA  integer NOT NULL,  
+                     idFormaALocal INTEGER NULL , 
+                     idFormaA INTEGER NOT NULL , 
+                     idAsociado INTEGER NOT NULL , 
+                     surco INTEGER NULL, 
+                     cajas INTEGER NOT NULL, 
+                     estatus INTEGER NOT NULL, 
+                     base INTEGER NULL, 
+                     estimacion INTEGER, 
+                     UUID TEXT, 
+                     autoSync INTEGER DEFAULT 0, 
+                     fechaCaptura TEXT,
+					 nombreAsociado TEXT
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblAsociadosTempCosecha( 
+                      idActividadProgramaLocal INTEGER NOT NULL, 
+                      idAsociado INTEGER NOT NULL 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS ActividadNoProgramadaWppDos ( 
+                     idActividadNoProgramadaLocal  integer primary key autoincrement,  
+                     idActividadNoProgramada INTEGER NOT NULL , 
+                     semanaProgramacion INTEGER NOT NULL , 
+                     anioProgramacion INTEGER NOT NULL , 
+                     idInvernadero INTEGER NOT NULL, 
+                     idEtapa INTEGER NOT NULL, 
+                     razon INTEGER NOT NULL, 
+                     comentario TEXT NOT NULL, 
+                     idCiclo INTEGER NOT NULL, 
+                     cantidadDeElementos INTEGER NOT NULL, 
+                     esInterplanting INTEGER NOT NULL, 
+                     estatus INTEGER NOT NULL, 
+                     UUID TEXT, 
+                     autoSync INTEGER DEFAULT 0 
+                     )  
+
+
+            |  CREATE TABLE IF NOT EXISTS TipoMermaCosechaWppDos ( 
+                     IdMerma  integer not null,  
+                     Razon TEXT NOT NULL , 
+                     Razon_EN TEXT NOT NULL  
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblTractoristaReporte ( 
+                     idTractoristaReporte integer primary key autoincrement,  
+                     tiempoRecoleccion TEXT NOT NULL,  
+                     tiempoFinalizado TEXT NULL,  
+                     folio TEXT NOT NULL,  
+                     status INTEGER NOT NULL, 
+                     qrPuerta TEXT 
+                     )  
+
+
+
+            /*
+             * ***********************************************************
+             * TABLAS NECESARIAS PARA EL MODULO DE PREHARVEST
+             * ***********************************************************
+             */
+
+            |  CREATE TABLE IF NOT EXISTS tbl_brix_captura ( 
+                      idBrixCapturaLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idBrixCaptura INEGER, 
+                      idInvernadero INTEGER, 
+                      idActividadProgramaLocal INTEGER, 
+                      idActividadPrograma INTEGER, 
+                      idSeccion INTEGER NOT NULL, 
+                      libras REAL, 
+                      idCalidad INTEGER, 
+                      fechaCaptura TEXT NOT NULL, 
+                      estatus INTEGER, 
+                      UUID TEXT, 
+                      autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tbl_brix_detalle ( 
+                      idBrixDetalleLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idBrixDetalle INTEGER, 
+                      idBrixCapturaLocal INTEGER, 
+                      idBrixCaptura INTEGER, 
+                      idColor INTEGER NOT NULL, 
+                      Brix REAL NOT NULL, 
+                      estatus INTEGER, 
+                      UUID TEXT, 
+                      autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblBrixHeader( 
+                      idBrixHeaderLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idBrixHeader INTEGER, 
+                      idBrixCapturaLocal INTEGER, 
+                      idBrixCaptura INTEGER, 
+                      idSegmento INTEGER, 
+                      idProducto INTEGER, 
+                      comentarios TEXT, 
+                      fechaCaptura TEXT, 
+                      idUsuarioCaptura TEXT, 
+                      idUsuarioModifica TEXT, 
+                      fechaModifica TEXT, 
+                      cajasTotales INTEGER DEFAULT 0, 
+                      folio INTEGER DEFAULT 0, 
+                      estatus INTEGER, 
+                      UUID TEXT, 
+                      autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblBrixColor( 
+                      idBrixColorLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idBrixColor INTEGER, 
+                      idBrixHeaderLocal INTEGER, 
+                      idBrixHeader INTEGER, 
+                      idSegmento INTEGER, 
+                      idColorQuality INTEGER, 
+                      value REAL, 
+                      porcentaje REAL, 
+                      estatus INTEGER, 
+                      UUID TEXT, 
+                      autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblBrixFirmeza( 
+                      idBrixFirmezaLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idBrixFirmeza INTEGER, 
+                      idBrixHeaderLocal INTEGER, 
+                      idBrixHeader INTEGER, 
+                      idSegmento INTEGER, 
+                      idFirmeza INTEGER, 
+                      value REAL, 
+                      porcentaje REAL, 
+                      estatus INTEGER, 
+                      UUID TEXT, 
+                      autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblBrixDefectos( 
+                      idBrixDefectoLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idBrixDefecto INTEGER, 
+                      idBrixHeaderLocal INTEGER, 
+                      idBrixHeader INTEGER, 
+                      idSegmento INTEGER, 
+                      idDefecto INTEGER, 
+                      value REAL, 
+                      porcentaje REAL, 
+                      estatus INTEGER, 
+                      UUID TEXT, 
+                      autoSync INTEGER DEFAULT 0 
+                     )  
+
+           
+            |  CREATE TABLE IF NOT EXISTS CatEmbarqueHeader( 
+                      embarque TEXT, 
+                      fechaOrigen TEXT, 
+                      origen TEXT, 
+                      fechaDestino TEXT, 
+                      destino TEXT, 
+                      estado TEXT, 
+                      semana INTEGER, 
+                      totalCajas INTEGER, 
+                      idOrigen INTEGER, 
+                      idDestino INTEGER,
+					  idSubOrigen INTEGER,
+					  idSubDestino INTEGER,
+					  codigoSubOrigen TEXT
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS CatEmbarqueDetail( 
+                      idEmbarqueDetail INTEGER, 
+                      embarque TEXT,  
+                      origen TEXT, 
+                      destino TEXT, 
+                      idDestino INTEGER, 
+                      fechaOrigen TEXT, 
+                      fechaDestino TEXT, 
+                      idProducto INTEGER, 
+                      producto TEXT, 
+                      idItem INTEGER, 
+                      cajas INTEGER, 
+                      ordenEntrega INTEGER,
+					  idSubDestino INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmbarqueHeader( 
+                      idEmbarqueHeaderLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idEmbarqueHeader INTEGER, 
+                      catEmbarque TEXT,     
+                      temperaturaInicio REAL, 
+                      timestampCarga TEXT, 
+                      timestampCargaTerminada TEXT, 
+                      timestampSalida TEXT, 
+                      timestampFin TEXT, 
+                      idUsuarioCarga INTEGER, 
+                      idPlanta INTEGER, 
+                      nombreChofer TEXT, 
+                      placasCamion TEXT, 
+                      numCajaCamion TEXT, 
+                      selloIzquierdo TEXT, 
+                      selloDerecho TEXT, 
+                      QRPuerta TEXT, 
+                      rechazado INTEGER, 
+                      comentarioRechazo TEXT, 
+                      timestampRechazo TEXT, 
+                      borrado INTEGER DEFAULT 0, 
+                      estatus INTEGER, 
+                      offline INTEGER DEFAULT 0,
+					  idSubPlanta INTEGER,
+					  termoDigital TEXT,
+					  numeroCaja TEXT
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmbarqueDestinos( 
+                      idEmbarqueDestinoLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idEmbarqueDestino INTEGER, 
+                      idEmbarqueHeaderLocal INTEGER, 
+                      idEmbarqueHeader INTEGER, 
+                      timestampLlegada TEXT, 
+                      timestampInicioDescarga TEXT, 
+                      timestampFinDescarga TEXT, 
+                      timestampSalida TEXT, 
+                      destino TEXT, 
+                      temperaturaInicio REAL, 
+                      temperaturaFin REAL, 
+                      QRPuerta TEXT, 
+                      idUsuarioDescarga INTEGER, 
+                      idPlanta INTEGER, 
+                      rechazado INTEGER, 
+                      comentarioRechazo TEXT, 
+                      timestampRechazo TEXT, 
+                      borrado INTEGER DEFAULT 0, 
+                      estatus INTEGER, 
+                      catEmbarque TEXT, 
+                      UUID TEXT,
+					  idSubPlanta INTEGER
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmbarqueProducto( 
+                      idEmbarqueProductoLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idEmbarqueProducto INTEGER, 
+                      idEmbarqueDestinoLocal INTEGER, 
+                      idEmbarqueDestino INTEGER, 
+                      idCatEmbarqueDetail INTEGER, 
+                      borrado INTEGER DEFAULT 0, 
+                      estatus INTEGER, 
+                      UUIDDestino TEXT, 
+                      UUID TEXT 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmbarqueFormasA( 
+                      idEmbarqueFormaALocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idEmbarqueFormaA INTEGER, 
+                      idEmbarqueProductoLocal INTEGER, 
+                      idEmbarqueProducto INTEGER, 
+                      idEmbarqueDestinoLocal INTEGER, 
+                      idEmbarqueDestino INTEGER, 
+                      idFormaAEmpaque INTEGER, 
+                      folio TEXT, 
+                      dividido INTEGER DEFAULT 0, 
+                      locacion TEXT, 
+                      temperaturaInicio REAL, 
+                      temperaturaFin REAL, 
+                      horaCarga TEXT, 
+                      horaDescarga TEXT, 
+                      idPlantaDescargo INTEGER, 
+                      borrado INTEGER DEFAULT 0, 
+                      estatus INTEGER, 
+                      UUIDProducto TEXT,
+					  idSubPlantaDescargo INTEGER
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmbarqueFIFO( 
+                      idEmbarqueHeaderLocal INTEGER, 
+                      idEmbarqueHeader INTEGER, 
+                      idFolioEmpaque INTEGER, 
+                      borrado INTEGER DEFAULT 0, 
+                      estatus INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tbl_percance ( 
+                      idPercance INTEGER, 
+                      idCategoriaPercance INTEGER, 
+                      percance TEXT, 
+                      percanceEN TEXT, 
+                      descripcion TEXT, 
+                      descripcionEN TEXT, 
+                      activo INTEGER, 
+                      minimo INTEGER, 
+                      maximo INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tbl_zona_monitoreo ( 
+                      idZona INTEGER, 
+                      vZona TEXT, 
+                      vZonaEN TEXT, 
+                      activo INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEtapaArticulo ( 
+                      idEtapaMateriales INTEGER, 
+                      idEtapa INTEGER, 
+                      idMaterial INTEGER, 
+                      cantidad INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEtapaElementos ( 
+                      idNumeroDeElemento INTEGER, 
+                      idEtapa INTEGER, 
+                      numeroDeElementos INTEGER, 
+                      porcentajeDeAumento INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEtapaTarget ( 
+                      idEtapaTarget INTEGER, 
+                      idEtapa INTEGER, 
+                      idProducto INTEGER, 
+                      target INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblFamilia ( 
+                      idFamilia INTEGER, 
+                      vFamilia TEXT, 
+                      vFamiliaEN TEXT, 
+                      usuarioModifico INTEGER, 
+                      fechaModifico TEXT, 
+                      activo INTEGER, 
+                      numNiveles INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblFumigacion ( 
+                      idFumigacion INTEGER, 
+                      idHabilidad INTEGER, 
+                      nombreCorto TEXT, 
+                      nombreHabilidad TEXT, 
+                      color TEXT, 
+                      soloEjecutable INTEGER, 
+                      directriz INTEGER, 
+                      repeticiones INTEGER, 
+                      idEtapa INTEGER, 
+                      nombreEtapa TEXT, 
+                      target INTEGER, 
+                      surcos INTEGER, 
+                      densidad INTEGER, 
+                      porSurco INTEGER, 
+                      idCiclo INTEGER, 
+                      semana INTEGER, 
+                      anio INTEGER, 
+                      fechaSugerida TEXT, 
+                      semanaInicio TEXT, 
+                      semanaFin TEXT, 
+                      greenHouse TEXT, 
+                      product TEXT, 
+                      codigoVariedad TEXT, 
+                      programada INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblLiderInvernadero( 
+                      idLiderInvernadero INTEGER, 
+                      idLider INTEGER, 
+                      idInvernadero INTEGER, 
+                      usuarioModifico INTEGER, 
+                      fechaModifico TEXT 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblConfiguraciones( 
+                      idPlanta INTEGER, 
+                      cosecha INTEGER, 
+                      preparacionDeSuelo INTEGER, 
+                      fumigaciones INTEGER, 
+                      capado INTEGER, 
+                      actividadNormal INTEGER, 
+                      colmenas INTEGER, 
+                      cajas INTEGER,  
+                      dptCultivo INTEGER, 
+                      dptCosecha INTEGER,  
+                      dptRND INTEGER,  
+                      cosechaRND INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblProductos ( 
+                      idProducto INTEGER, 
+                      descripcion TEXT, 
+                      codigo TEXT, 
+                      activo INTEGER, 
+                      color TEXT 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblVariedad( 
+                      idVariedad INTEGER, 
+                      idProducto INTEGER, 
+                      codigoVariedad TEXT, 
+                      segmento TEXT 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEficienciaAsociado ( 
+                      idEficienciaAsociado INTEGER, 
+                      idAsociado INTEGER, 
+                      idEtapa INTEGER, 
+                      eventos INTEGER, 
+                      plantasHora INTEGER, 
+                      idProducto INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEstimadoCajas ( 
+                     idEstimadoCajasLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                     idEstimadoCajas INTEGER, 
+                     idInvernadero INTEGER, 
+                     idLider INTEGER, 
+                     idCosecha INTEGER, 
+                     idCosechaLocal INTEGER, 
+                     semana INTEGER, 
+                     borrado INTEGER, 
+                     fechaCaptura  TEXT, 
+                     surcos INTEGER, 
+                     estatus INTEGER, 
+                     UUID TEXT, 
+                     autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEstimadoCajasCaptura ( 
+                     idEstimadoCajasCapturaLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                     idEstimadoCajasCaptura INTEGER, 
+                     idEstimadoCajas INTEGER, 
+                     idEstimadoCajasLocal INTEGER, 
+                     idAsociado INTEGER, 
+                     surco INTEGER, 
+                     cajas REAL, 
+                     estimado REAL, 
+                     fechaCaptura TEXT, 
+                     borrado INTEGER, 
+                     asignado INTEGER, 
+                     estatus INTEGER, 
+                     UUID TEXT, 
+                     autoSync INTEGER DEFAULT 0 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblMermasTraslado ( 
+                      idTrasladoMermaLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idTrasladoMermaSer INTEGER DEFAULT 0, 
+                      idFormaALocal INTEGER, 
+                      idFormaA INTEGER, 
+                      idRazon INTEGER, 
+                      cajas INTEGER, 
+                      comentarios TEXT, 
+                      estatus INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblRazonMermaTraslado( 
+                      idRazonMerma INTEGER, 
+                      nombre TEXT, 
+                      nombreEN TEXT 
+                     )  
+
+            |  INSERT INTO tblRazonMermaTraslado VALUES(1, 'Charolas caidas', 'Charolas caidas'   );  
+            |  INSERT INTO tblRazonMermaTraslado VALUES(2, 'Charolas golpeadas', 'Charolas caidas');  
+            |  INSERT INTO tblRazonMermaTraslado VALUES(3, 'Charolas volteadas', 'Charolas caidas');  
+
+            |  CREATE TABLE IF NOT EXISTS tblFechasOficiales( 
+                      evento TEXT, 
+                      tipoRepeticion INTEGER, 
+                      fecha TEXT, 
+                      horaInicio TEXT, 
+                      horaFin TEXT, 
+                      dias TEXT, 
+                      idInvernadero INTEGER, 
+                      idPlanta INTEGER 
+                     )  
+
+            /*
+             * ---------------------------------------------------------------------------------
+             * TABLAS NECESARIAS PARA PRESTAMO DE ASOCIADOS
+             * ---------------------------------------------------------------------------------
+             */
+
+            |  CREATE TABLE IF NOT EXISTS tblLideres( 
+                      idLider INTEGER, 
+                      nombre TEXT, 
+                      idPlanta INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblPrestamoAsociados( 
+                      idPrestamoAsociadoLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idPrestamoAsociado INTEGER, 
+                      idUsuarioPresta INTEGER, 
+                      idUsuarioDestino INTEGER, 
+                      idAsociado INTEGER, 
+                      fechaInicioPrestamo TEXT, 
+                      fechaDevolucion TEXT, 
+                      estatus INTEGER 
+                     )  
+
+            /*
+             * CATALOGOS PARA PREHARVEST QUALITY
+             */
+            |  CREATE TABLE IF NOT EXISTS tblEmpaqueSegmento( 
+                      idSegmento INTEGER, 
+                      segmento TEXT, 
+                      descripcion TEXT 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmpaqueBrix ( 
+                      idSegmento INTEGER, 
+                      idBrix INTEGER, 
+                      acidez INTEGER, 
+                      minValue REAL, 
+                      boxMinValue REAL, 
+                      brix TEXT 
+                      )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmpaqueFirmezas( 
+                      idSegmento INTEGER, 
+                      idFirmeza INTEGER, 
+                      firmeza TEXT, 
+                      idVariable INTEGER, 
+                      tolerancia REAL 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmpaqueColores( 
+                      idSegmento INTEGER, 
+                      idColor INTEGER, 
+                      color TEXT, 
+                      idVariable, 
+                      tolerancia REAL 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblEmpaqueDefectos( 
+                      idSegmento INTEGER, 
+                      idDefecto INTEGER, 
+                      defecto TEXT, 
+                      descripcion TEXT, 
+                      tolerancia REAL, 
+                      valorCritico INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblFoliosEmpaque( 
+                     ID INTEGER, 
+                     idLocation INTEGER,  
+                     Location TEXT,  
+                     PX INTEGER,  
+                     PY INTEGER,  
+                     PZ INTEGER,  
+                     folio TEXT,  
+                     cajas INTEGER,  
+                     idPlanta INTEGER,  
+                     idInvernadero INTEGER,  
+                     invernadero TEXT,  
+                     idProducto INTEGER, 
+                     fecha TEXT, 
+                     producto TEXT, 
+                     dividido INTEGER,
+					 division TEXT
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblFormaATractorista( 
+                     idFormaA INTEGER, 
+                     folio TEXT, 
+                     cajas INTEGER, 
+                     invernadero TEXT, 
+                     fechaInicio TEXT, 
+                     fechaFin TEXT, 
+                     entregado INTEGER 
+                     )  
+
+            /*
+             * SECCION DE TABLAS PARA MODULO DE GROWING
+             *
+             * CATALOGOS GROWING
+             */
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingGrupo( 
+					id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     idGrupo INTEGER, 
+                     GrupoEs TEXT, 
+                     GrupoEn TEXT, 
+                     Ponderacion INTEGER, 
+                     PonderacionNP INTEGER, 
+                     AplicaPlantacion INTEGER, 
+                     AplicaNoPlantacion INTEGER,
+					 AnulacionCalculo INTEGER
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingParametro( 
+					id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     idParametro INTEGER, 
+                     idGrupo INTEGER, 
+                     ParametroEs TEXT, 
+                     ParametroEn TEXT,
+					 NivelAfectacion REAL
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingParametroPropiedad( 
+					id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     idPropiedad INTEGER, 
+                     idParametro INTEGER, 
+                     PropiedadEs TEXT, 
+                     PropiedadEn TEXT, 
+                     TieneOpciones INTEGER, 
+                     AplicaNumero INTEGER, 
+                     AplicaTexto INTEGER, 
+                     AplicaCheck INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingParametroPropiedadOpcion( 
+					id INTEGER PRIMARY KEY AUTOINCREMENT,
+                     idOpcion INTEGER, 
+                     idPropiedad INTEGER, 
+                     OpcionEs TEXT, 
+                     OpcionEn TEXT, 
+                     AplicaNumero INTEGER, 
+                     AplicaTexto INTEGER, 
+                     AplicaCheck INTEGER, 
+                     Porcentaje INTEGER,
+					 SAG INTEGER,
+					 AplicaAnulacion INTEGER
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingCaptura( 
+                      idCapturaLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idCaptura INTEGER, 
+                      Etiqueta TEXT,  
+                      Comentarios TEXT, 
+                      FechaCaptura TEXT, 
+                      NombreGrower TEXT, 
+                      Gerente TEXT, 
+                      Lider TEXT, 
+                      IdStatus INTEGER, 
+                      IdInvernadero INTEGER, 
+                      IdUsuarioCreacion INTEGER, 
+                      IdUsuarioModifica INTEGER, 
+                      IdUsuarioElimina INTEGER, 
+                      FechaCreacion TEXT, 
+                      FechaModifica TEXT, 
+                      FechaElimina TEXT, 
+                      Plantacion INTEGER, 
+                      Calificacion REAL, 
+                      CalificacionCalculada REAL, 
+                      UUID TEXT, 
+                      estatus INTEGER,
+					  activo INTEGER
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingCapturaGrupo( 
+                      idCapturaGrupoLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idCapturaGrupo INTEGER, 
+                      idCapturaLocal INTEGER, 
+                      idCaptura INTEGER, 
+                      idGrowingGrupo INTEGER, 
+                      Calificacion REAL, 
+                      CalificacionCalculada REAL, 
+                      UUID TEXT, 
+                      estatus INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingCapturaParametro( 
+                      idCapturaParametroLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idCapturaParametro INTEGER, 
+                      idCapturaLocal INTEGER, 
+                      idCaptura INTEGER, 
+                      idGrowingParametro INTEGER, 
+                      Aplica INTEGER, 
+                      UUID TEXT, 
+                      estatus INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblGrowingCapturaPropiedad( 
+                      idCapturaPropiedadLocal INTEGER PRIMARY KEY AUTOINCREMENT, 
+                      idCapturaPropiedad INTEGER, 
+                      idCapturaLocal INTEGER, 
+                      idCaptura INTEGER, 
+                      idGrowingPropiedad INTEGER, 
+                      Calificacion REAL, 
+                      Cumplimiento INTEGER, 
+                      idOpcionSeleccionada INTEGER, 
+                      Texto TEXT, 
+                      Numero REAL, 
+                      UUID TEXT, 
+                      estatus INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS tblLocaciones( 
+                      codigoLocacion TEXT, 
+                      tipoLocacion INTEGER 
+                     )  
+
+            |  CREATE TABLE IF NOT EXISTS FormaALog ( 
+			   idFormaALog INTEGER PRIMARY KEY AUTOINCREMENT, 
+			   idFormaALocal  INTEGER, 
+			   idFormaA  INTEGER,  
+			   UUIDFolio TEXT, 
+			   folio TEXT , 
+			   fechaInicio TEXT, 
+			   fechaFin TEXT, 
+			   cerrado INTEGER, 
+			   estatus INTEGER, 
+			   UUID TEXT, 
+			   idUsuarioModifica INTEGER, 
+			   fechaModifica TEXT, 
+			   borrado INTEGER, 
+			   autoSync INTEGER, 
+			   idInvernadero INTEGER, 
+			   claveInvernadero TEXT
+			   )
+
+            |  CREATE TRIGGER IF NOT EXISTS MermaTrasladoTrigger AFTER INSERT ON tblMermasTraslado 
+                      WHEN new.idFormaA  >  0 
+                      BEGIN 
+                     	UPDATE tblMermasTraslado SET idFormaALocal = (SELECT f.idFormaALocal FROM FormaAWppDos f WHERE f.idFormaA = new.idFormaA) WHERE new.idFormaALocal IS NULL AND idFormaA = new.idFormaA; 
+                      END;  
+
+			| CREATE TABLE IF NOT EXISTS Usuario(
+	idUsuario INTEGER NULL,
+	rol INTEGER NULL,
+	vUsuario TEXT NULL,
+	nombre TEXT NULL,
+	IdPlanta int null,
+	NombrePlanta TEXT NULL,
+	esrd INTEGER null,
+	idEmpleado TEXT NULL,
+	modulos TEXT NULL,
+	idDepartamento INTEGER NULL,
+	idSubPlanta INTEGER NULL)
+
+	|
+
+	CREATE TABLE IF NOT EXISTS tblSeccionPreharvest(
+				UUIDFormaA TEXT,
+				seccion INTEGER,
+				UUID TEXT,
+				estatus INTEGER,
+				borrado INTEGER,
+				plantulas INTEGER,
+				posicion INTEGER)
+
+	|
+
+	CREATE TABLE IF NOT EXISTS tblEmbarqueIncidencia(   
+				  idEmbarqueIncidenciaLocal INTEGER PRIMARY KEY AUTOINCREMENT,   
+				  idEmbarqueIncidencia INTEGER,   
+				  embarque TEXT,   
+				  idMotivo INTEGER,   
+				  motivo TEXT,   
+				  tiempoRetraso INTEGER,    
+				  cantidad INTEGER,    
+				  devolucion BIT,    
+				  cancelado BIT,    
+				  observaciones TEXT,    
+				  fechaInicio TEXT,    
+				  fechaFin TEXT,    
+				  semana INTEGER,    
+				  idOrigen INTEGER,    
+				  idDestino INTEGER,    
+				  origen TEXT,    
+				  destino TEXT,   
+				  activo INTEGER,    
+				  estatus INTEGER,    
+				  borrado INTEGER,    
+				  idUsuario INTEGER,    
+				  idPlanta INTEGER,    
+				  UUID TEXT   
+				 ) 
+
+				 |
+
+				 CREATE TABLE IF NOT EXISTS tblIncidenciaMotivo(   
+				  idIncidenciaMotivo INTEGER ,   
+				  incidenciaMotivo TEXT,   
+				  activo INTEGER   
+				 )
+				|
+
+				CREATE TABLE IF NOT EXISTS tblPlantas (   
+				 	idPlanta integer,   
+				 	NombrePlanta text,   
+				 	NombreCorto text,   
+				 	horaInicio integer,   
+				 	minutoInicio integer,   
+				 	horaFin integer,   
+				 	minutoFin integer,   
+				 	diaInicioSemana integer,   
+				 	permiteColmena INTEGER   
+				 )
+				|
+				INSERT INTO tblPlantas(idPlanta, NombrePlanta) VALUES   
+				 (8, 'Nayarit'),   
+				 (6, 'Zapotlan'),   
+				 (4, 'Tuxcacuesco'),   
+				 (2, 'San Isidro'),   
+				 (5, 'Colima'),   
+				 (3, 'Willcox');
+				 |
+				 CREATE TABLE IF NOT EXISTS tblPreharvestDetalle( 
+     idInvernadero INTEGER, 
+     idActividadPrograma INTEGER, 
+     fechaCaptura TEXT, 
+     folio TEXT, 
+     calidad TEXT, 
+     secciones TEXT, 
+     pesoMuestra REAL, 
+     brix REAL, 
+     defectos TEXT, 
+     firmezas TEXT, 
+     colores TEXT 
+    )
+
+	|
+
+	CREATE TABLE IF NOT EXISTS tblRelLiderInvernadero
+    (idInvernadero INTEGER,
+     idLider INTEGER,
+     nombreLider TEXT,
+     idGerente INTEGER,
+     nombreGerente TEXT
+    )
+
+	|CREATE TABLE IF NOT EXISTS tblEquiposDeTrabajo (
+      idEquipoTrabajo INTEGER,
+      nombreEquipo TEXT,
+      idEmpleadoAsociado INTEGER,
+      nombreAsociado TEXT
+     )

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HarvestDBDataSet" targetNamespace="http://tempuri.org/HarvestDBDataSet.xsd" xmlns:mstns="http://tempuri.org/HarvestDBDataSet.xsd" xmlns="http://tempuri.org/HarvestDBDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="HarvestDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HarvestDBConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.HarvestDBConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vformasATableAdapter" Name="vformasA">
+            <MainSource>
+              <DbSource ConnectionRef="HarvestDBConnectionString (Web.config)" DbObjectName="HarvestDB.dbo.vformasA" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idInvernadero, claveInvernadero, ncorte, folio, cerrado, cajas, surco, seccion, fechaInicio, fechaFin, Variety, idproducto, producto, cantidadProduccion, Farm, Lider, dmcMercado, dmcCalidad, FechaInicioTractorista, FechaFinTractorista, idciclo, Cycle, vnombre, cajasTotales FROM dbo.vformasA</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idInvernadero" DataSetColumn="idInvernadero" />
+              <Mapping SourceColumn="claveInvernadero" DataSetColumn="claveInvernadero" />
+              <Mapping SourceColumn="ncorte" DataSetColumn="ncorte" />
+              <Mapping SourceColumn="folio" DataSetColumn="folio" />
+              <Mapping SourceColumn="cerrado" DataSetColumn="cerrado" />
+              <Mapping SourceColumn="cajas" DataSetColumn="cajas" />
+              <Mapping SourceColumn="surco" DataSetColumn="surco" />
+              <Mapping SourceColumn="seccion" DataSetColumn="seccion" />
+              <Mapping SourceColumn="fechaInicio" DataSetColumn="fechaInicio" />
+              <Mapping SourceColumn="fechaFin" DataSetColumn="fechaFin" />
+              <Mapping SourceColumn="Variety" DataSetColumn="Variety" />
+              <Mapping SourceColumn="idproducto" DataSetColumn="idproducto" />
+              <Mapping SourceColumn="producto" DataSetColumn="producto" />
+              <Mapping SourceColumn="cantidadProduccion" DataSetColumn="cantidadProduccion" />
+              <Mapping SourceColumn="Farm" DataSetColumn="Farm" />
+              <Mapping SourceColumn="Lider" DataSetColumn="Lider" />
+              <Mapping SourceColumn="dmcMercado" DataSetColumn="dmcMercado" />
+              <Mapping SourceColumn="dmcCalidad" DataSetColumn="dmcCalidad" />
+              <Mapping SourceColumn="FechaInicioTractorista" DataSetColumn="FechaInicioTractorista" />
+              <Mapping SourceColumn="FechaFinTractorista" DataSetColumn="FechaFinTractorista" />
+              <Mapping SourceColumn="idciclo" DataSetColumn="idciclo" />
+              <Mapping SourceColumn="Cycle" DataSetColumn="Cycle" />
+              <Mapping SourceColumn="vnombre" DataSetColumn="vnombre" />
+              <Mapping SourceColumn="cajasTotales" DataSetColumn="cajasTotales" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HarvestDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vformasA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idInvernadero" type="xs:int" />
+              <xs:element name="claveInvernadero">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ncorte" msdata:ReadOnly="true" type="xs:int" minOccurs="0" />
+              <xs:element name="folio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cerrado" type="xs:boolean" minOccurs="0" />
+              <xs:element name="cajas" type="xs:int" minOccurs="0" />
+              <xs:element name="surco" type="xs:int" />
+              <xs:element name="seccion" msdata:ReadOnly="true" type="xs:int" minOccurs="0" />
+              <xs:element name="fechaInicio" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fechaFin" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Variety" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="idproducto" type="xs:long" minOccurs="0" />
+              <xs:element name="producto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cantidadProduccion" msdata:ReadOnly="true" type="xs:int" minOccurs="0" />
+              <xs:element name="Farm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Lider" type="xs:int" />
+              <xs:element name="dmcMercado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dmcCalidad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaInicioTractorista" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FechaFinTractorista" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="idciclo" type="xs:int" />
+              <xs:element name="Cycle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="vnombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cajasTotales" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

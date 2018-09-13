@@ -1,0 +1,520 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <title></title>
+    <link href="comun/css/Style.css" rel="Stylesheet" type="text/css" />
+    <link href="comun/css/comun.css" rel="Stylesheet" type="text/css" />
+    <link href="comun/css/ts_theme.jui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        //var formId = '<%= form1.ClientID %>';
+        var ModalProgress = '<%# ModalProgress.ClientID %>';
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        //var myVar = setInterval(function () { myTimer() }, 10000);
+        //function myTimer() {
+        //    CallServer(1, '');
+        //}
+    </script>
+    <script type="text/javascript">
+        //Funcion para recibir la información de las notificaciones
+        function ReceiveServerData(arg, context) {
+            var lbl = document.getElementById(context);
+            lbl.innerText = arg;
+        }
+
+        jQuery(function () {
+
+            $("#wifi").show();
+            $("#nowifi").hide();
+
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 75) {
+                    jQuery('#<%=Image1.ClientID %>')
+                .css({ 'width': '150px', 'height': '45px', 'margin-top': '-8px' })
+                
+                }
+                if (jQuery(this).scrollTop() < 75) {
+                    jQuery('#<%=Image1.ClientID %>')
+                .css({ 'width': '200px',
+                    'height': '65px',
+                    'margin-top': '0px',
+                    '-webkit-transition': 'all 0.2s ease',
+                    '-moz-transition': 'all 0.2s ease',
+                    '-ms-transition': 'all 0.2s ease',
+                    '-o-transition': 'all 0.2s ease',
+                    'transition': 'all 0.2s ease',
+                    'z-index': '71'
+                })
+                   
+                }
+            });
+        });
+
+    </script>
+    <style type="text/css">
+        .notificationPanel
+        {
+            border: 1px solid white;
+        }
+        .notificationPanel .noLeido
+        {
+            background: #FCEE9E;
+        }
+        .notificationPanel .Leido
+        {
+            background: #FEF8D8;
+        }
+        .notificationPanel th
+        {
+            display: none;
+        }
+        .notificacionPanel td
+        {
+            max-width: 100px;
+            overflow: hidden;
+            max-height: 150px;
+            white-space: nowrap;
+            text-transform: capitalize;
+        }
+        td.event
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body class="floating-footer">
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <asp:ToolkitScriptManager ID="ScriptMaster" runat="server" AsyncPostBackTimeout="7200"
+            EnablePageMethods="true">
+           </asp:ToolkitScriptManager>
+        <div class="header">
+            <div class="img">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/comun/img/bonanza.png" Width="200px"
+                    Height="65px" />
+               
+            </div>
+            <div class="search" style="z-index: 888;">
+                <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                    <ContentTemplate>
+                        <table >
+                            <tr>
+                                <td>
+                                    <%--<img id="wifi" class="wifi" src="../Images/wifi.png" alt="Internet" width="18px"
+                                        internet="true">
+                                    <img id="nowifi" class="wifi" src="../Images/no-wifi.png" alt="Internet" width="18px"
+                                        internet="false" style="display: none;">--%>
+                                    <asp:ImageButton ID="btnNotificaciones" runat="server" BorderStyle="None" ImageUrl="~/Images/mensajes.png"
+                                        OnClick="btnNotificaciones_Click" Width="36px" />
+                                    <asp:Label ID="lblCountNotificaciones" runat="server" Font-Bold="True" Font-Size="12pt"
+                                        ForeColor="Red" Text="0"></asp:Label>
+                                </td>
+                                <td style="vertical-align: bottom;">
+                                    <asp:UpdatePanel ID="updatePanelMaster" runat="server">
+                                        <ContentTemplate>
+                                            <span class="Plant">
+                                                <asp:Literal runat="server" ID="ltPlant"></asp:Literal><asp:DropDownList runat="server"
+                                                    ID="ddlPlanta" Style="background-color: #000080; border-color: #000080; color:white">
+                                                </asp:DropDownList>
+                                            </span>
+                                        </ContentTemplate>
+                                    </asp:UpdatePanel>
+                                </td>
+                                <td>
+                                    <span class="username">
+                                        <asp:Literal runat="server" ID="ltUsername"></asp:Literal>
+                                    </span>
+                                </td>
+                                <td>
+                                    <asp:LinkButton runat="server" ID="LinkButton1" Text="Salir" CssClass="logout" OnClick="lnkSalir_Click"
+                                        meta:resourceKey="LinkButton1"></asp:LinkButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td colspan="2">
+                                    <span class="currdate">
+                                        <script type="text/javascript">
+                                            var today_date = new Date()
+                                            var month = today_date.getMonth()
+                                            var today = today_date.getDate()
+                                            var year = today_date.getFullYear()
+
+                                            var months = new Array(
+                                "Enero",
+                                "Febrero",
+                                "Marzo",
+                                "Abril",
+                                "Mayo",
+                                "Junio",
+                                "Julio",
+                                "Agosto",
+                                "Septiembre",
+                                "Octubre",
+                                "Noviembre",
+                                "Diciembre");
+                                            document.write(months[month] + " " + today + ", " + year);
+                                        </script>
+                                    </span><span id="reloj"></span><span class="semana">Semana:
+                                        <asp:Label runat="server" ID="ltSemana"></asp:Label></span>
+                                </td>
+                                <td style="text-align: right; padding: 5px;">
+                                    <asp:LinkButton ID="LinkButton2" runat="server" meta:resourceKey="Espanol" OnClick="lnkSpanish_Click"></asp:LinkButton>
+                                    <asp:LinkButton ID="LinkButton3" runat="server" meta:resourceKey="Ingles" OnClick="lnkEnglish_Click"></asp:LinkButton>
+                                    <asp:DropDownList ID="ddlLocale" runat="server" CausesValidation="False" Style="display: none">
+                                        <asp:ListItem Text="Español" Value="es-MX"></asp:ListItem>
+                                        <asp:ListItem Text="Ingles" Value="en-US"></asp:ListItem>
+                                    </asp:DropDownList>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <asp:Panel ID="pnlNotificaciones" runat="server" Visible="False" BackColor="White">
+                                        <asp:GridView CssClass="notificationPanel" ID="gvNotificaciones" runat="server" AutoGenerateColumns="False"
+                                            DataKeyNames="idNotificacion" DataSourceID="dstNotificaciones" Width="100%" OnRowCreated="gvNotificaciones_RowCreated"
+                                            OnRowDataBound="gvNotificaciones_RowDataBound" OnPreRender="gvNotificaciones_PreRender"
+                                            OnSelectedIndexChanged="gvNotificaciones_SelectedIndexChanged">
+                                            <Columns>
+                                                <asp:BoundField DataField="idNotificacion" HeaderText="idNotificacion" InsertVisible="False"
+                                                    ReadOnly="True" SortExpression="idNotificacion"></asp:BoundField>
+                                                <asp:CommandField ShowSelectButton="True" SelectText="Ver">
+                                                    <HeaderStyle Width="40px" />
+                                                    <ItemStyle Width="40px" Height="30px" VerticalAlign="Middle" />
+                                                </asp:CommandField>
+                                                <asp:BoundField DataField="Departamento" HeaderText="" ReadOnly="True" SortExpression="Departamento">
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="Rol" HeaderText="" ReadOnly="True" SortExpression="Rol">
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="Usuario" HeaderText="" SortExpression="Usuario"></asp:BoundField>
+                                                <asp:BoundField DataField="EsParaTodos" HeaderText="" ReadOnly="True" SortExpression="EsParaTodos">
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="Mensaje" HeaderText="" SortExpression="Mensaje">
+                                                    <HeaderStyle Width="250px" />
+                                                    <ItemStyle Width="250px" Height="30px" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                </asp:BoundField>
+                                                <asp:BoundField DataField="FechaCaptura" HeaderText="" SortExpression="FechaCaptura" />
+                                                <asp:BoundField DataField="Leida" HeaderText="" ReadOnly="True" SortExpression="Leida" />
+                                            </Columns>
+                                            <HeaderStyle BackColor="Silver" />
+                                            <SelectedRowStyle BackColor="#0099FF" />
+                                        </asp:GridView>
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <asp:Panel ID="pnlPopupNot" runat="server" Style="display: inline-block; background-color: Gray">
+                            <asp:Panel ID="pnlMasterPopupNot" runat="server" Style="cursor: move; background-color: White;
+                                border: solid 1px Gray; color: Black" Width="500px">
+                                <div id="txtMensaje" runat="server">
+                                </div>
+                            </asp:Panel>
+                        </asp:Panel>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="gvNotificaciones" />
+                    </Triggers>
+                </asp:UpdatePanel>
+            </div>
+            <div class="nav">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <ul id="nav-container" class="nav">
+                            <%=  Session["menu"]%>
+                        </ul>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+                <script type="text/javascript">
+                    $('.modalPopup').hide();
+                </script>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <%--LOADING TEMPLATE--%>
+        <script src="../comun/scripts/jsPopUp.js" type="text/javascript"></script>
+        <script type="text/javascript" language="javascript">
+
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequest);
+
+            var sessionWarn;
+            var SessionTimeend;
+            var ultimaCelda = null;
+            var currentTime = null;
+            //var DigitalAux = null;
+
+            function beginRequest(sender, args) {
+                var pamn = document.getElementById('divLoading');
+                if (pamn) {
+                    pamn.style.display = 'block';
+                }
+
+                var overlay = document.getElementById('overlay');
+                if (overlay) {
+                    overlay.style.display = 'block';
+                }
+            }
+
+            $('#ctl00_ddlPlanta').change(function () {
+                PageMethods.seleccionaPlanta($('#ctl00_ddlPlanta').val());
+                PageMethods.ObtenerHoraUsuario(function (result) {
+                    Digital = new Date(result);
+                });
+            });
+
+            function endRequest(sender, args) {
+                var pamn = document.getElementById('divLoading');
+                if (pamn) {
+                    pamn.style.display = 'none';
+                }
+
+                var overlay = document.getElementById('overlay');
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+                ResetClientSideSessionTimers();
+            }
+
+            $(function () {
+                sessionWarn = setTimeout('ShowSessionTimeoutWarning()', '<%=iWarningTimeoutInMilliseconds%>');
+                SessionTimeend = setTimeout('ShowSessionExpiredNotification()', '<%=iSessionTimeoutInMilliseconds%>');
+
+                PageMethods.ObtenerHoraUsuario(function (result) {
+                    currentTime = result;
+                    reloj();
+                });
+
+                //reloj();
+                wifi();
+                $('div.img').addClass('fixed');
+                $(window).scroll(function (e) {
+                    var top = $(window).scrollTop();
+                    if (top > 90) {
+                        $('#nav-container').addClass('fixed');
+                        $('div.nav').addClass('fixed');
+                    }
+                    else {
+                        $('#nav-container').removeClass('fixed');
+                        $('div.nav').removeClass('fixed');
+                    }
+                });
+                //                $(window).scroll(function(e){
+                //    var top = $(window).scrollTop();
+
+                //    if (top > 85) {// this would be the "normal" position of the menu
+                //        $("#nav-container").addClass("fixed");}
+                //    else{
+                //        $("#nav-container").removeClass("fixed");}
+                //});​
+            });
+
+            //Notify the user that his session is ABOUT to expire.
+            //Do so by making our warning div tag visible.
+            function ShowSessionTimeoutWarning() {
+                popUpAlert('<%=GetGlobalResourceObject("commun","session") %>', 'info');
+            }
+
+            //Notify the user that his session HAS expired.
+            function ShowSessionExpiredNotification() {
+
+
+                //Send the user to a new page.
+                window.location = '<%=sTargetURLForSessionTimeout%>';
+
+            }
+
+            function ResetClientSideSessionTimers() {
+
+                clearTimeout(sessionWarn);
+                clearTimeout(SessionTimeend);
+
+                //Reset timers so we can warn the user the NEXT time the session is about to expire.
+                sessionWarn = setTimeout('ShowSessionTimeoutWarning()', '<%=iWarningTimeoutInMilliseconds%>');
+                SessionTimeend = setTimeout('ShowSessionExpiredNotification()', '<%=iSessionTimeoutInMilliseconds%>');
+
+            }
+
+            function registerControls() {
+                if ($(".gridView").find("tbody").find("tr").size() >= 1) {
+                    var pagerOptions = { // Opciones para el  paginador
+                        container: $("#pager"),
+                        output: '{page} ' + '<%= (String)GetGlobalResourceObject("commun","de")%>' + ' {totalPages}'
+                    };
+
+                    $(".gridView")
+				 .tablesorter({
+				     widthFixed: true,
+				     widgets: ['zebra', 'filter'],
+				     headers: { /*0: { filter: false} */
+				     },
+				     widgetOptions: {
+				         zebra: ["gridView", "gridViewAlt"]
+				         //filter_hideFilters: true // Autohide
+				     }
+				 }).tablesorterPager(pagerOptions);
+
+                    $(".tablesorter-filter.disabled").hide(); // hide disabled filters
+                }
+                else {
+                    $("#pager").hide();
+                }
+            } 
+
+        </script>
+        <script language="javascript" type="text/javascript">
+            function reloj() {
+                if (ultimaCelda != null) {
+                    $(ultimaCelda).select();
+                    ultimaCelda = null;
+                }
+
+                if (!document.all && !document.getElementById)
+                    return
+                thelement = document.getElementById ? document.getElementById("reloj") : document.all.hora
+
+                Digital = (currentTime == null ? new Date(Digital.setSeconds(Digital.getSeconds() + 1)) : new Date(currentTime));
+                currentTime = null;
+                var hours = Digital.getHours();
+                var minutes = Digital.getMinutes();
+                var seconds = Digital.getSeconds();
+                var dn = "PM"
+                if (hours < 12)
+                    dn = "AM"
+                if (hours > 12)
+                    hours = hours - 12
+                if (hours == 0)
+                    hours = 12
+                if (minutes <= 9)
+                    minutes = "0" + minutes
+                if (seconds <= 9)
+                    seconds = "0" + seconds
+                var ctime = hours + ":" + minutes + ":" + seconds + " " + dn
+                thelement.innerHTML = ctime;
+                $(thelement).attr("fecha", Digital.format("yyyy-MM-dd HH:mm:ss"));
+                setTimeout("reloj()", 1000);
+            }
+
+            function getBaseURL() {
+                var url = location.href;  // entire url including querystring - also: window.location.href;
+                var baseURL = url.substring(0, url.indexOf('/', 14));
+
+
+                if (baseURL.indexOf('http://localhost') != -1) {
+                    // Base Url for localhost
+                    var url = location.href;  // window.location.href;
+                    var pathname = location.pathname;  // window.location.pathname;
+                    var index1 = url.indexOf(pathname);
+                    var index2 = url.indexOf("/", index1 + 1);
+                    var baseLocalUrl = url.substr(0, index1);
+
+                    return baseLocalUrl + "/";
+                }
+                else {
+                    // Root Url for domain name
+                    return baseURL + "/";
+                }
+
+            }
+
+            function wifi() {
+                try {
+                    setInterval(function () {
+                        var pathArray = window.location.pathname.split('/');
+                        var _url = getBaseURL() + "comun/img/test.png"; //window.location.origin + "/comun/img/test.png";
+                        $.ajax({
+                            url: _url, // pathArray[1] + "/Default.aspx",// + window.location.pathname,
+                            timeout: 500,
+                            error: function (jqXHR) {
+                                if (jqXHR.readyState == 0 || jqXHR.status == 0) {
+                                    thereIsInternet(false);
+                                }
+                            },
+                            success: function () {
+                                thereIsInternet(true);
+                            }
+                        });
+
+
+                    }, 5000);
+                }
+                catch (err) {
+                    thereIsInternet(false);
+                    console.log("Err: " + err);
+                    wifi();
+                }
+            }
+
+            function thereIsInternet(result) {
+                $("#wifi").attr("internet", (result ? "true" : "false"));
+                if (result) {
+                    $("#wifi").show();
+                    $("#nowifi").hide();
+                } else {
+                    $("#nowifi").show();
+                    $("#wifi").hide();
+                }
+            }
+        
+        </script>
+       <%-- <div id="overlay">
+        </div>--%>
+        <div id="divLoading" style="display: none;">
+            <center>
+                <table>
+                    <tr valign="middle">
+                        <td align="right">
+                            <asp:ImageMap CssClass="imgLoading" ID="imgLoading" runat="server" ImageUrl="~/comun/img/loading.gif" />
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <asp:Panel ID="pnlPopUpLoading" runat="server" CssClass="modalPopup" Height="100px"
+            Width="40px" Style="display: none; position: fixed;">
+            <div align="center" style="margin-top: 13px;">
+               
+                <img src="../comun/img/loading.gif" alt="" />
+            </div>
+        </asp:Panel>
+        <asp:Button runat="server" ID="btnTargetControl" Visible="false" />
+        <asp:Button runat="server" ID="btnCancelControl" Visible="false" />
+        <asp:ModalPopupExtender runat="server" ID="ModalProgress" BehaviorID="sModalProgress"
+            BackgroundCssClass="modalBackground" PopupControlID="pnlPopUpLoading" TargetControlID="btnTargetControl"
+            CancelControlID="btnCancelControl" PopupDragHandleControlID="pnlPopUp">
+            </asp:ModalPopupExtender>
+        <asp:ModalPopupExtender ID="MPE" runat="server" PopupDragHandleControlID="pnlPopupNot"
+            PopupControlID="pnlMasterPopupNot" BackgroundCssClass="modalBackground" TargetControlID="btnTargetControl"
+            CancelControlID="btnCancelControl" DropShadow="true" RepositionMode="RepositionOnWindowScroll">
+            </asp:ModalPopupExtender>
+       
+    </div>
+    <asp:SqlDataSource ID="dstNotificaciones" runat="server" ConnectionString="<%$ ConnectionStrings:dbConn %>"
+        SelectCommand="spr_ObtenerListaDeNotifcaciones" SelectCommandType="StoredProcedure"
+        ProviderName="System.Data.SqlClient">
+        <SelectParameters>
+            <asp:SessionParameter DefaultValue="0" Name="idUsuario" SessionField="userIDInj"
+                Type="Int32" />
+            <asp:Parameter DefaultValue="true" Name="EsEnEspanol" Type="Boolean" />
+            <asp:SessionParameter DefaultValue="0" Name="NotificacionesPorMostrar" SessionField="NotificacionesPorMostrar"
+                Type="Int32" />
+            <asp:Parameter DefaultValue="0" Name="NumeroDeError" Type="Int32" Direction="InputOutput" />
+            <asp:Parameter DefaultValue="  " Name="MensajeDeError" Type="String" Direction="InputOutput" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    </form>
+</body>
+</html>

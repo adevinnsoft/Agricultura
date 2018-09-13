@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://localhost/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://localhost/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://localhost/">
+      <s:element name="swLideres">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPlanta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swLideresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swLideresResult" type="tns:ArrayOfLideres" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLideres">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Lideres" nillable="true" type="tns:Lideres" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Lideres">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idPlanta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="idEmpleado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="swAsociados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idPlanta" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idNivel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFamilia" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idLider" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idAsociado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="esSpyga" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swAsociadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swAsociadosResult" type="tns:ArrayOfAsociados" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAsociados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Asociados" nillable="true" type="tns:Asociados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Asociados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idPlanta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idDepartamento" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="idEmpleado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="idLider" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idNivel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idFamilia" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="esSpyga" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="salarioDiario" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="salarioSemanal" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="swGrupos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swGruposResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swGruposResult" type="tns:ArrayOfGrupos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGrupos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Grupos" nillable="true" type="tns:Grupos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Grupos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="swNiveles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idNivel" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idFamilia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swNivelesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swNivelesResult" type="tns:ArrayOfNiveles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfNiveles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Niveles" nillable="true" type="tns:Niveles" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Niveles">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idNivel" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idFamilia" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="swFamilias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idFamilia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swFamiliasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swFamiliasResult" type="tns:ArrayOfFamilias" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFamilias">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Familias" nillable="true" type="tns:Familias" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Familias">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idFamilia" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="swHorarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="start" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="end" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="swHorariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="swHorariosResult" type="tns:ArrayOfHorarios" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfHorarios">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Horarios" nillable="true" type="tns:Horarios" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Horarios">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idEmpleado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fecha" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Hora_inicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Hora_final" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfLideres" nillable="true" type="tns:ArrayOfLideres" />
+      <s:element name="ArrayOfAsociados" nillable="true" type="tns:ArrayOfAsociados" />
+      <s:element name="ArrayOfGrupos" nillable="true" type="tns:ArrayOfGrupos" />
+      <s:element name="ArrayOfNiveles" nillable="true" type="tns:ArrayOfNiveles" />
+      <s:element name="ArrayOfFamilias" nillable="true" type="tns:ArrayOfFamilias" />
+      <s:element name="ArrayOfHorarios" nillable="true" type="tns:ArrayOfHorarios" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="swLideresSoapIn">
+    <wsdl:part name="parameters" element="tns:swLideres" />
+  </wsdl:message>
+  <wsdl:message name="swLideresSoapOut">
+    <wsdl:part name="parameters" element="tns:swLideresResponse" />
+  </wsdl:message>
+  <wsdl:message name="swAsociadosSoapIn">
+    <wsdl:part name="parameters" element="tns:swAsociados" />
+  </wsdl:message>
+  <wsdl:message name="swAsociadosSoapOut">
+    <wsdl:part name="parameters" element="tns:swAsociadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="swGruposSoapIn">
+    <wsdl:part name="parameters" element="tns:swGrupos" />
+  </wsdl:message>
+  <wsdl:message name="swGruposSoapOut">
+    <wsdl:part name="parameters" element="tns:swGruposResponse" />
+  </wsdl:message>
+  <wsdl:message name="swNivelesSoapIn">
+    <wsdl:part name="parameters" element="tns:swNiveles" />
+  </wsdl:message>
+  <wsdl:message name="swNivelesSoapOut">
+    <wsdl:part name="parameters" element="tns:swNivelesResponse" />
+  </wsdl:message>
+  <wsdl:message name="swFamiliasSoapIn">
+    <wsdl:part name="parameters" element="tns:swFamilias" />
+  </wsdl:message>
+  <wsdl:message name="swFamiliasSoapOut">
+    <wsdl:part name="parameters" element="tns:swFamiliasResponse" />
+  </wsdl:message>
+  <wsdl:message name="swHorariosSoapIn">
+    <wsdl:part name="parameters" element="tns:swHorarios" />
+  </wsdl:message>
+  <wsdl:message name="swHorariosSoapOut">
+    <wsdl:part name="parameters" element="tns:swHorariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="swLideresHttpGetIn">
+    <wsdl:part name="idPlanta" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swLideresHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLideres" />
+  </wsdl:message>
+  <wsdl:message name="swAsociadosHttpGetIn">
+    <wsdl:part name="idPlanta" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+    <wsdl:part name="idNivel" type="s:string" />
+    <wsdl:part name="idFamilia" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+    <wsdl:part name="idLider" type="s:string" />
+    <wsdl:part name="idAsociado" type="s:string" />
+    <wsdl:part name="esSpyga" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swAsociadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAsociados" />
+  </wsdl:message>
+  <wsdl:message name="swGruposHttpGetIn">
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swGruposHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfGrupos" />
+  </wsdl:message>
+  <wsdl:message name="swNivelesHttpGetIn">
+    <wsdl:part name="idNivel" type="s:string" />
+    <wsdl:part name="idFamilia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swNivelesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfNiveles" />
+  </wsdl:message>
+  <wsdl:message name="swFamiliasHttpGetIn">
+    <wsdl:part name="idFamilia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swFamiliasHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFamilias" />
+  </wsdl:message>
+  <wsdl:message name="swHorariosHttpGetIn">
+    <wsdl:part name="idEmpleado" type="s:string" />
+    <wsdl:part name="start" type="s:string" />
+    <wsdl:part name="end" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swHorariosHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfHorarios" />
+  </wsdl:message>
+  <wsdl:message name="swLideresHttpPostIn">
+    <wsdl:part name="idPlanta" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swLideresHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfLideres" />
+  </wsdl:message>
+  <wsdl:message name="swAsociadosHttpPostIn">
+    <wsdl:part name="idPlanta" type="s:string" />
+    <wsdl:part name="idDepartamento" type="s:string" />
+    <wsdl:part name="idNivel" type="s:string" />
+    <wsdl:part name="idFamilia" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+    <wsdl:part name="idLider" type="s:string" />
+    <wsdl:part name="idAsociado" type="s:string" />
+    <wsdl:part name="esSpyga" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swAsociadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfAsociados" />
+  </wsdl:message>
+  <wsdl:message name="swGruposHttpPostIn">
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swGruposHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfGrupos" />
+  </wsdl:message>
+  <wsdl:message name="swNivelesHttpPostIn">
+    <wsdl:part name="idNivel" type="s:string" />
+    <wsdl:part name="idFamilia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swNivelesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfNiveles" />
+  </wsdl:message>
+  <wsdl:message name="swFamiliasHttpPostIn">
+    <wsdl:part name="idFamilia" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swFamiliasHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFamilias" />
+  </wsdl:message>
+  <wsdl:message name="swHorariosHttpPostIn">
+    <wsdl:part name="idEmpleado" type="s:string" />
+    <wsdl:part name="start" type="s:string" />
+    <wsdl:part name="end" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="swHorariosHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfHorarios" />
+  </wsdl:message>
+  <wsdl:portType name="Incidencias_x0020_-_x0020_WSSoap">
+    <wsdl:operation name="swLideres">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Lideres</wsdl:documentation>
+      <wsdl:input message="tns:swLideresSoapIn" />
+      <wsdl:output message="tns:swLideresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Asociados</wsdl:documentation>
+      <wsdl:input message="tns:swAsociadosSoapIn" />
+      <wsdl:output message="tns:swAsociadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Grupos</wsdl:documentation>
+      <wsdl:input message="tns:swGruposSoapIn" />
+      <wsdl:output message="tns:swGruposSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Niveles</wsdl:documentation>
+      <wsdl:input message="tns:swNivelesSoapIn" />
+      <wsdl:output message="tns:swNivelesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Familias</wsdl:documentation>
+      <wsdl:input message="tns:swFamiliasSoapIn" />
+      <wsdl:output message="tns:swFamiliasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Horarios</wsdl:documentation>
+      <wsdl:input message="tns:swHorariosSoapIn" />
+      <wsdl:output message="tns:swHorariosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Incidencias_x0020_-_x0020_WSHttpGet">
+    <wsdl:operation name="swLideres">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Lideres</wsdl:documentation>
+      <wsdl:input message="tns:swLideresHttpGetIn" />
+      <wsdl:output message="tns:swLideresHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Asociados</wsdl:documentation>
+      <wsdl:input message="tns:swAsociadosHttpGetIn" />
+      <wsdl:output message="tns:swAsociadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Grupos</wsdl:documentation>
+      <wsdl:input message="tns:swGruposHttpGetIn" />
+      <wsdl:output message="tns:swGruposHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Niveles</wsdl:documentation>
+      <wsdl:input message="tns:swNivelesHttpGetIn" />
+      <wsdl:output message="tns:swNivelesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Familias</wsdl:documentation>
+      <wsdl:input message="tns:swFamiliasHttpGetIn" />
+      <wsdl:output message="tns:swFamiliasHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Horarios</wsdl:documentation>
+      <wsdl:input message="tns:swHorariosHttpGetIn" />
+      <wsdl:output message="tns:swHorariosHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Incidencias_x0020_-_x0020_WSHttpPost">
+    <wsdl:operation name="swLideres">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Lideres</wsdl:documentation>
+      <wsdl:input message="tns:swLideresHttpPostIn" />
+      <wsdl:output message="tns:swLideresHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Asociados</wsdl:documentation>
+      <wsdl:input message="tns:swAsociadosHttpPostIn" />
+      <wsdl:output message="tns:swAsociadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Grupos</wsdl:documentation>
+      <wsdl:input message="tns:swGruposHttpPostIn" />
+      <wsdl:output message="tns:swGruposHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Niveles</wsdl:documentation>
+      <wsdl:input message="tns:swNivelesHttpPostIn" />
+      <wsdl:output message="tns:swNivelesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Familias</wsdl:documentation>
+      <wsdl:input message="tns:swFamiliasHttpPostIn" />
+      <wsdl:output message="tns:swFamiliasHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Devuelve Horarios</wsdl:documentation>
+      <wsdl:input message="tns:swHorariosHttpPostIn" />
+      <wsdl:output message="tns:swHorariosHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Incidencias_x0020_-_x0020_WSSoap" type="tns:Incidencias_x0020_-_x0020_WSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="swLideres">
+      <soap:operation soapAction="http://localhost/swLideres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <soap:operation soapAction="http://localhost/swAsociados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <soap:operation soapAction="http://localhost/swGrupos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <soap:operation soapAction="http://localhost/swNiveles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <soap:operation soapAction="http://localhost/swFamilias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <soap:operation soapAction="http://localhost/swHorarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Incidencias_x0020_-_x0020_WSSoap12" type="tns:Incidencias_x0020_-_x0020_WSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="swLideres">
+      <soap12:operation soapAction="http://localhost/swLideres" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <soap12:operation soapAction="http://localhost/swAsociados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <soap12:operation soapAction="http://localhost/swGrupos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <soap12:operation soapAction="http://localhost/swNiveles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <soap12:operation soapAction="http://localhost/swFamilias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <soap12:operation soapAction="http://localhost/swHorarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Incidencias_x0020_-_x0020_WSHttpGet" type="tns:Incidencias_x0020_-_x0020_WSHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="swLideres">
+      <http:operation location="/swLideres" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <http:operation location="/swAsociados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <http:operation location="/swGrupos" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <http:operation location="/swNiveles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <http:operation location="/swFamilias" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <http:operation location="/swHorarios" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Incidencias_x0020_-_x0020_WSHttpPost" type="tns:Incidencias_x0020_-_x0020_WSHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="swLideres">
+      <http:operation location="/swLideres" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swAsociados">
+      <http:operation location="/swAsociados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swGrupos">
+      <http:operation location="/swGrupos" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swNiveles">
+      <http:operation location="/swNiveles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swFamilias">
+      <http:operation location="/swFamilias" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="swHorarios">
+      <http:operation location="/swHorarios" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Incidencias_x0020_-_x0020_WS">
+    <wsdl:port name="Incidencias_x0020_-_x0020_WSSoap" binding="tns:Incidencias_x0020_-_x0020_WSSoap">
+      <soap:address location="http://192.168.167.90/Incidenciaswebservice/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Incidencias_x0020_-_x0020_WSSoap12" binding="tns:Incidencias_x0020_-_x0020_WSSoap12">
+      <soap12:address location="http://192.168.167.90/Incidenciaswebservice/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Incidencias_x0020_-_x0020_WSHttpGet" binding="tns:Incidencias_x0020_-_x0020_WSHttpGet">
+      <http:address location="http://192.168.167.90/Incidenciaswebservice/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Incidencias_x0020_-_x0020_WSHttpPost" binding="tns:Incidencias_x0020_-_x0020_WSHttpPost">
+      <http:address location="http://192.168.167.90/Incidenciaswebservice/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

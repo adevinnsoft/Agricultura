@@ -1,0 +1,1730 @@
+﻿table 
+{
+    border-style: none;
+	border-color: inherit;
+	border-width: medium;
+	margin: 0;
+	padding: 0;	
+}
+
+
+element.style {
+    height: 80px;
+    min-height: 0;
+    width: auto;
+}
+
+
+hr
+{
+    
+    border-bottom: solid 2px #7CB656;
+}
+
+
+.Content
+{
+    width:100%;
+    vertical-align:top;
+border:1px solid #000;
+}
+
+.border
+{
+    border: 1px solid #4682B4;
+}
+
+.menu
+{
+    font-family: Tahoma;
+    font-size: 12px;
+    background-color: #000000;
+    color: White;
+}
+
+.mainMenuStyle
+{
+    text-decoration: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.mainMenuHoverStyle
+{
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.menu a
+{
+    color: White;
+    text-decoration: none;
+}
+
+.pageTitle
+{
+    text-align:center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #4682B4;
+    border-bottom: 1px solid #4682B4;
+    text-align: center;
+    text-decoration:none;
+    
+}
+
+
+
+.controls
+{
+    font-size: 11px;
+}
+
+.dataGrid
+{
+    border: 1px solid black;
+}
+
+.gridHeader
+{
+    background-color: #4682B4;
+    color: White;
+    text-align: center;
+}
+
+.HeaderAlignLeft
+{
+    background-color: #4682B4;
+    color: White;
+    text-align: left;
+}
+
+.alternatingItem
+{
+    background-color: #DCDCDC;
+}
+
+.gridItem
+{
+    background-color: White;
+}
+
+.gridFooter
+{
+    background-color: Silver;
+}
+
+.resalteRojo
+{
+    color: Red;
+    font-weight: bold;
+}
+
+#divTabs
+{
+    border: 1px solid #333;
+}
+
+#divTabs h2
+{
+    background: url(../images/style/h30.png) 0 0;
+    margin: 0;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: normal;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+img
+{
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+}
+
+#divTabs h2.Current
+{
+    cursor: default;
+    background-color: #fff;
+}
+
+#divTabs .divPane
+{
+    border: 1px solid #fff;
+    border-width: 0 2px;
+    min-height: 0px;
+}
+
+#divTabs .divSearch
+{
+    border-bottom: 1px solid black;
+    min-height: 0px;
+    height: 150px;
+    max-height: 150px;
+    overflow: auto;
+    text-align: left;
+}
+
+.pageTitle
+{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.LabelTitle
+{
+    background-color: #D1D1D1;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.LabelSubtitle
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+.LabelDetail
+{
+    font-size: 11px;
+    font-weight: bold;
+    text-align: right;
+    text-transform: uppercase;
+}
+.LabelDetail2
+{
+    background-color: #D1D1D1;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+.LabelDetail3
+{
+    font-size: 11px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+.Textbox
+{
+    text-align: center;
+    text-transform: uppercase;
+}
+.ControlDetail
+{
+    font-size: 12px;
+    text-transform: uppercase;
+}
+#divOverlay
+{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.79;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=79)";
+    filter: alpha(opacity=79);
+    -moz-opacity: 0.79;
+    position: fixed;
+    visibility: hidden;
+}
+#divSearchProv
+{
+    position: absolute;
+    margin: 0 auto;
+    display: none;
+    background-color: #ffffff;
+    left: 50%;
+    border: solid 1px #000;
+    width: 408px;
+    margin-top: 0px;
+    margin-left: -204px;
+    text-align: left;
+}
+#divSearchDesc
+{
+    position: absolute;
+    margin: auto;
+    display: none;
+    background: #fff;
+    border: solid 1px #000;
+    width: 408px;
+    text-align: center;
+    left: 50%;
+    top: 30%;
+    margin-left: -204px;
+    margin-right: auto;
+}
+#divSearchClass
+{
+    position: absolute;
+    margin: auto;
+    display: none;
+    background: #fff;
+    border: solid 1px #000;
+    width: 408px;
+    text-align: center;
+    left: 50%;
+    top: 30%;
+    margin-left: -204px;
+    margin-right: auto;
+}
+.headerGradient
+{
+    background: url(../images/style/h30.png) 0 0;
+    margin: 0;
+    padding: 0px 0px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #222;
+    height: 25px;
+}
+.titleGradient
+{
+    background: #d1d1d1 url(../images/style/h30.png) 0 0;
+    margin: 0;
+    padding: 0px 0px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #222;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    height: 22px;
+}
+.detailGradient2
+{
+    background: #d1d1d1 url(../images/style/h30.png) 0 0;
+    margin: 0px;
+    padding: 0px 0px;
+    border: 1px solid #222;
+    vertical-align: middle;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+#divErrorMessage
+{
+    border: solid 1px #000;
+    text-align: center;
+    font-size: 10px;
+}
+
+#overlay
+{
+    background-image: url(../images/style/white.png);
+    color: #000;
+    height: 500px;
+}
+div.contentWrap
+{
+    height: 495px;
+    overflow-y: auto;
+}
+.apple_overlay
+{
+    display: none;
+    width: 640px;
+    padding: 35px;
+    font-size: 11px;
+    background-image: url(../images/style/white.png);
+    color: #000;
+    height: 500px;
+}
+.apple_overlay .close
+{
+    background-image: url(../images/style/close.png);
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+.tblContent
+{
+    font-family: Tahoma;
+    font-size: 12px;
+}
+/*********************************** DATEINPUT CSS *************************************/
+/* the input field */
+.date 
+{
+    font-size: 11px;
+    text-align: center;
+}
+
+/* calendar root element */
+#calroot {
+	/* place on top of other elements. set a higher value if nessessary */
+	z-index:10000;
+	
+	margin-top:-1px;
+	width:198px;
+	padding:2px;
+	background-color:#fff;
+	font-size:11px;
+	border:1px solid #ccc;
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+	-moz-box-shadow: 0 0 15px #666;
+	-webkit-box-shadow: 0 0 15px #666;	
+}
+
+/* head. contains title, prev/next month controls and possible month/year selectors */
+#calhead {	
+	padding:2px 0;
+	height:22px;
+} 
+
+#caltitle {
+	font-size:14px;
+	color:#0150D1;	
+	float:left;
+	text-align:center;
+	width:155px;
+	line-height:20px;
+	text-shadow:0 1px 0 #ddd;
+}
+
+#calnext, #calprev {
+	display:block;
+	width:20px;
+	height:20px;
+	background:transparent url(../images/style/prev.gif) no-repeat scroll center center;
+	float:left;
+	cursor:pointer;
+}
+
+#calnext {
+	background-image:url(../images/style/next.gif);
+	float:right;
+}
+
+#calprev.caldisabled, #calnext.caldisabled {
+	visibility:hidden;	
+}
+
+/* year/month selector */
+#caltitle select {
+	font-size:10px;	
+}
+
+/* names of the days */
+#caldays {
+	height:14px;
+	border-bottom:1px solid #ddd;
+}
+
+#caldays span {
+	display:block;
+	float:left;
+	width:28px;
+	text-align:center;
+}
+
+/* container for weeks */
+#calweeks {
+	background-color:#fff;
+	margin-top:4px;
+}
+
+/* single week */
+.calweek {
+	clear:left;
+	height:22px;
+}
+
+/* single day */
+.calweek a {
+	display:block;
+	float:left;
+	width:27px;
+	height:20px;
+	text-decoration:none;
+	font-size:11px;
+	margin-left:1px;
+	text-align:center;
+	line-height:20px;
+	color:#666;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px; 		
+} 
+
+/* different states */
+.calweek a:hover, .calfocus {
+	background-color:#ddd;
+}
+
+/* sunday */
+a.calsun {
+	color:red;		
+}
+
+/* offmonth day */
+a.caloff {
+	color:#ccc;		
+}
+
+a.caloff:hover {
+	background-color:rgb(245, 245, 250);		
+}
+
+
+/* unselecteble day */
+a.caldisabled {
+	background-color:#efefef !important;
+	color:#ccc	!important;
+	cursor:default;
+}
+
+/* current day */
+#calcurrent {
+	background-color:#498CE2;
+	color:#fff;
+}
+
+/* today */
+#caltoday {
+	background-color:#333;
+	color:#fff;
+}
+
+
+
+/*Table Login*/
+.TableLogin{
+    border: solid 1px black;
+    padding: 10px 10px 10px 10px;
+    height:200px;
+}
+.TableLogin td{
+    padding-left:10px;
+}
+
+.TableLogin tr{
+    padding-bottom:10px;
+}
+
+/*Menu Bar*/
+.MenuBar
+{
+    background-image: url('../images/menuBackGround.jpg') ;
+    background-repeat:repeat-x;
+    height:45px;
+    width:100%;
+    vertical-align:top;
+}
+
+.MenuBar td
+{
+    padding: 0 5px 0 5px;
+    width:100px;
+    border-right: solid 4px black;
+}
+.MenuBar .bar
+{
+    background-image: url('../images/menuBackGround.jpg') no-repeat;
+    border: solid 2px black;
+    width: 5px;
+    height: 45px;
+    color:Black;
+    position:relative;
+}
+
+.menuWidth
+{
+    width:1000px;
+}
+
+
+/* Modal Pop-up */ 
+
+.modalBackground 
+{
+    background-color:Black;
+    filter:alpha(opacity=70);
+    opacity:0.7; 
+    z-index:-1;
+} 
+
+.modalPopup
+{
+    background:#fff;
+	float:left;
+	font-size:1.2em;
+	position:fixed;
+	top:50%; left:50%;
+	z-index:99999;
+	border:2px solid #000;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+    overflow:auto;
+    z-index:-1;
+    color:#000;
+}
+
+
+.modalPopup h1 {
+	color:#000000;
+	margin:3px;}
+
+.modalPopup h2 {
+	color:#5b5b5f;
+	margin:3px;
+	}
+	
+.modalPopup a 
+{
+    color:#000;
+    text-decoration:none;
+    margin:5px;}
+
+/*Table Popups*/
+.ConntentPopup
+{
+    width:98%;
+    
+}
+
+.ConntentPopup tr
+{
+    padding-top:15px;
+}
+
+.ConntentPopup td
+{   
+    padding-left:5px;
+    padding-top:10px;
+}
+
+.updateProgressMessage
+{
+    margin:3px; 
+    font-family:Trebuchet MS; 
+    font-size:small; 
+    vertical-align: middle;
+}
+
+
+/*Instructions*/
+.instructionArea
+{
+    width:99%;
+    height:18px;
+    background-color:#CBCBCB;
+    border: solid 1px Black;       
+}
+
+.instructionArea .instruction
+{
+    font-size:10px;
+    color:#7B7C7E;
+    text-align:left;
+    vertical-align:middle;
+}
+
+
+
+
+
+
+
+/* GRID VIEW*/
+
+.gridView
+{
+width:900px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:30px;
+
+	
+	-moz-border-radius:7px; 
+	-webkit-border-radius: 7px;
+	border-radius: 7px;}
+
+
+
+.gridView td
+{
+    padding:3px 10px;
+	text-align:center;
+	white-space:nowrap;
+	border:none;
+}
+
+.gridView tr th
+{
+   border-top:1px solid #adc995;
+	border-bottom:1px solid #adc995;
+	border-left:none;
+	border-right:none;
+	background:#f0f5e5;
+	color:#000;
+	font-family: ProximaNovaRgBold, ProximaNovaLtBold,ProximaNovaThBold, Arial, Helvetica,Sans serif;
+	font-size:13px;
+	text-transform:uppercase;
+	white-space:nowrap;
+	text-align:center;
+}
+
+
+.tablesorter-header-inner:hover 
+{
+    cursor:pointer;
+    text-decoration:underline;}
+
+/*
+.gridView tr th:hover 
+{
+    text-decoration:underline;
+    cursor:pointer;
+    background:#adc995;}*/
+
+.gridViewHeader a
+{
+    color: #000;
+    text-decoration:underline;
+}
+
+.gridView td 
+{
+    background:#D6DFD0;}
+
+.gridView tr.odd td
+{
+    background:#D6DFD0;
+}
+
+tr.gridView td 
+{
+    background:#D6DFD0;}
+    
+    
+tr.gridViewAlt td 
+{
+    background:#ffffff;}
+     
+
+.gridView tr.even td
+{
+    background-color:#ffffff;
+}
+/*//Mouse Over Row*/
+.gridView tr:hover td
+{
+    background-color:#F1FFA3;
+    cursor:pointer;    
+}
+
+/* GRID VIEW Footer*/
+.gridViewPagerStyle  
+{
+    background:#fff;
+    font-weight: bold;
+    color: White;
+    text-align:center;
+
+} 
+
+.gridViewPagerStyle table
+{
+    text-align:center;    
+    margin:auto;
+    width:auto;
+}
+.gridViewPagerStyle table td
+{
+    background:#ffffff;
+    border:0px;
+    text-align:center;  
+    color:#ff6600; 
+}
+.gridViewPagerStyle td
+{
+    border-top: none;
+    color:#ff6600;
+}
+
+.gridViewPagerStyle td span 
+{
+    color:#ff6600;
+    display:block;
+    border:1px solid #ccc;
+    padding:6px;
+    width:100%;
+    max-width: 50px;
+    background:#f7f7f7;
+   }
+.gridViewPagerStyle a
+{
+    color:#ffffff;
+    text-decoration:none;
+    display:block;
+    background:none;
+    text-align:center;
+    font-size:13px;
+    width:100%;
+    max-width: 50px;
+    background:#ff9e5e;
+    padding:5px;
+    border:1px #ff6600 solid;
+    
+}
+
+.gridViewPagerStyle a:hover
+{ background:#ff6600;
+}
+.gridViewPagerStyle span
+{
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    padding:2px 10px 2px 10px;
+}
+
+
+.gridEmptyData
+{
+    background-color:fff;
+    color:Black;
+    font-weight:bold;
+    font-size:12px;
+    text-align:center;
+}
+
+/*repeater*/
+.repeater
+{
+    width:98%;
+}
+
+.repeater tr 
+{
+    background-color:#;
+}
+
+.repeaterSeparator
+{
+    margin:none;
+    height:1px;
+    background-color:Red;
+}
+
+.repeaterSeparator td
+{
+    margin:none;
+    height:1px;
+    background-color:#7CB656;
+}
+
+/*IT IT*/
+.itDepartment td
+{
+    background-color:#E2FAD3;
+}
+
+/*Usuer US*/
+.itUser td
+{
+    background-color:#EDEDED;
+}
+
+/*HelpDesk HD*/
+.itHelpDesk td
+{
+    background-color:#F6FFD0;
+}
+
+
+.OverPopUp
+{
+    z-index:10005;
+    display:block;
+}
+
+.generalHeaders
+{
+    text-align:center;
+    font-weight: bold;
+    text-decoration:none;
+    font-size: 16px;
+    color: #981111;
+    text-decoration:none;   
+}
+
+.labelInfo
+{
+    font-weight:normal;
+}
+
+.noDisplay
+{
+    display:none;
+    z-index:-1;
+}
+
+.readOnlyDescription
+{
+    height:60px;
+    width:98%;
+    background-color:#EEEEEE;
+}
+
+.dropDownList
+{
+    min-width:130px;
+}
+
+/*Accordion Repeater*/
+
+.accordionCabecera 
+{ 
+    border: 1px solid black; 
+    background-image:url('../images/gridViewHeaderBackGround.png');
+    font-family: Arial, Sans-Serif; 
+    font-size: 14px; 
+    font-weight: bold; 
+    padding: 4px; 
+    margin-top: 4px; 
+    cursor: pointer; 
+    width:98%;
+} 
+
+.accordionContenido 
+{ 
+    font-family: Sans-Serif; 
+    background-color: #F3F3F3; 
+    border: 1px solid black; 
+    border-top: none; 
+    font-size: 12px; 
+    padding: 7px; 
+    width:97%;
+    overflow:auto;
+    height:180px;
+    max-height:180px;
+} 
+
+.accordionContenidoAdmin
+{ 
+    font-family: Sans-Serif; 
+    background-color: #F3F3F3; 
+    border: 1px solid black; 
+    border-top: none; 
+    font-size: 12px; 
+    padding: 7px; 
+    width:97%;
+    overflow:auto;
+    height:220px;
+    max-height:220px;
+} 
+
+
+
+/*Accordion Administration*/
+
+.accordionCabecera 
+{ 
+    border: 1px solid black; 
+    background-image:url('../images/gridViewHeaderBackGround.png');
+    font-family: Arial, Sans-Serif; 
+    font-size: 14px; 
+    font-weight: bold; 
+    padding: 4px; 
+    margin-top: 4px; 
+    cursor: pointer; 
+    width:98%;
+} 
+
+.accordionContenido 
+{ 
+    font-family: Sans-Serif; 
+    background-color: #F3F3F3; 
+    border: 1px solid black; 
+    border-top: none; 
+    font-size: 12px; 
+    padding: 7px; 
+    width:97%;
+    overflow:auto;
+    height:180px;
+    max-height:180px;
+} 
+
+/*Comment Area*/
+.commentsArea
+{
+    padding-top:2px;
+    padding-bottom:5px;
+    height:180px;
+    border: solid 1px Black;
+    width:98%;
+    
+    
+}
+
+
+/**/
+.tableSetDetails
+{
+    text-align:center;
+    vertical-align:middle;
+    width:100%;
+}
+
+.tableAdminFeaturs
+{
+    text-align:center;
+    vertical-align:middle;
+    
+}
+.tableAdminFeaturs td
+{
+    padding:15px 25px 5px 5px;  
+}
+
+.IconClose
+{
+    position: absolute;
+    z-index:10002;
+    right: 5px;
+    top: -5px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+
+
+/*CALENDAR*/
+
+.cal_Theme1 .ajax__calendar_container   {
+    background-color: #e2e2e2; 
+    border:solid 1px #cccccc;
+}
+
+.cal_Theme1 .ajax__calendar_header  {
+    background-color: #ffffff; 
+    margin-bottom: 4px;
+}
+
+.cal_Theme1 .ajax__calendar_title,
+.cal_Theme1 .ajax__calendar_next,
+.cal_Theme1 .ajax__calendar_prev    {
+    color: #004080; 
+    padding-top: 3px;
+}
+
+.cal_Theme1 .ajax__calendar_body    {
+    background-color: #e9e9e9; 
+    border: solid 1px #cccccc;
+}
+
+.cal_Theme1 .ajax__calendar_dayname {
+    text-align:center; 
+    font-weight:bold; 
+    margin-bottom: 4px; 
+    margin-top: 2px;
+}
+
+.cal_Theme1 .ajax__calendar_day {
+    text-align:center;
+}
+
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_day,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_month,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_year,
+.cal_Theme1 .ajax__calendar_active  {
+    color: #004080; 
+    font-weight: bold; 
+    background-color: #ffffff;
+}
+
+.cal_Theme1 .ajax__calendar_today   {
+    font-weight:bold;
+}
+
+.cal_Theme1 .ajax__calendar_other,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_today,
+.cal_Theme1 .ajax__calendar_hover .ajax__calendar_title {
+    color: #bbbbbb;
+}
+
+
+/*DIV FILTER*/
+.divFilter
+{
+    width:99%;
+    border: solid 1px black;
+}
+
+.divFilter tr
+{
+    font-weight:bold;
+}
+
+
+.divFilter td
+{
+    background-color:#D6DFD0;    
+    padding: 2px 5px 5px 2px;
+}
+
+/*lnk Button menu*/
+.lnkMenu
+{
+    color:White;
+    font-weight:bold;
+    text-decoration:none;
+    
+}
+
+.menuTitle
+{
+    color:White;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+
+
+/*^'^ Primary Items ^'^*/	
+
+
+
+/*HEADER INSTRUCTIONS*/
+.headerInstruction
+{
+    
+}
+
+.headerInstruction .header
+{
+    
+}
+
+
+.blockSizeTableLables
+{
+    width: 200px;
+    
+    padding-right:10px;
+}
+
+blockSizeTableLablesBig
+{
+    width: 240px; 
+    text-align:right;
+    padding-right:10px;
+}
+
+/*DIV LOADING*/
+#divLoading
+{
+    position: absolute;
+    margin: 0 auto;
+    display: none;
+    background-color: Transparent;
+    left: 50%;
+    top: 300px;
+    color:#fee435;
+
+    margin-top: 0px;
+    margin-left: -100px;
+    text-align: left;
+    
+    height:50px;
+    width:160px;
+    z-index:9999999;
+}
+
+#overlay 
+{
+    display: none;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    z-index: 9999998;
+    background-image: url('../images/overlay.png');
+}
+
+
+.tdLabelsPosition
+{
+    width: 240px; 
+    text-align:right; 
+    padding-right:10px;
+}
+
+
+/* =============== COLAPSIBLE PANEL COMMENTS ==============*/
+
+.cpHeader
+{
+    color: white;
+    background-image:url('../images/gridViewHeaderBackGround.png');
+    background-color: #719DDB;
+    font: bold 11px auto "Trebuchet MS", Verdana;
+    font-size: 12px;
+    cursor: pointer;
+    width:99%;  
+}
+.cpBody
+{
+    /*background-color: #DCE4F9;*/
+    background-color: #f3f3f3;
+    background-color:White;
+    border: 1px gray;               
+    width:98%;
+    padding:4px;
+    max-height:180px;
+    padding-top:7px;
+    overflow:auto ;
+    border: solid 1px black;
+}    
+
+
+
+#divImage
+{
+    float:left;
+    width:60px;
+}
+
+#divMessage
+{
+     float:left;
+     padding-top:10px;
+}
+
+#divLogo
+{
+    float:left;
+    width:20px;
+    padding-left:10px;
+}
+
+#divTittle
+{
+     float:left;    
+}
+
+.ModalBackGround
+{
+    z-index: 10000;
+    width: 675px;
+    min-height: 100px;
+    border: 1px solid #666;
+    -moz-box-shadow: 0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px black;  
+    background: #FFFFFF
+}
+
+.modalShadowIE
+{
+    /* IE >= 8 */
+   
+    /* IE 5 to IE7*/
+ 
+}
+
+.ModalBackGround h2
+ {
+	color:#5b5b5f;
+	margin:3px;
+}
+
+.cancelBUtton
+{
+    background-image: url(../comun/img/imagesMessage/close.png);
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+
+.cancelBUtton:hover
+{
+    background-image: url(../comun/img/imagesMessage/closeHover.png);
+}
+
+.headerModal
+{
+    border: 1px solid #E78F08;
+    background: #F6A828 url(../imagesMessage/headerModal.png) 50% 50% repeat-x;
+    color: white;
+    font-weight: bold;
+    height: 25px;
+    padding-top: 10px;
+    /*Border radius for Mozzilla*/
+    -moz-border-radius: 7px 7px / 7px 7px;
+    /*Border raius for Chrome, Safari and Some IE9*/
+    border-radius: 7px 7px / 7px 7px;
+}
+
+.ui-widget-content 
+{
+    color: #000;
+    min-height: 20px;
+}
+
+.ui-widget-overlay
+{
+    background: #666 url(../imagesMessage/bgModal.png) 50% 50% repeat;
+    opacity: .50;
+}
+
+.imgLog
+{
+    width: 33px;
+    height: 18px;
+}
+
+
+
+
+
+body { background:#fff; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+.tdBorder
+{
+	border:solid 1px black;
+	width:40px;
+	height:40px;
+}
+
+.tdBorderBig
+{
+	border:solid 1px black;
+	width:88px;
+	height:44px;
+}
+
+
+.classGray { border: 1px solid #cccccc; background: #f6f6f6 }
+
+.ContainerDraggable
+{
+	height:300px;
+ 	overflow:auto; 
+}
+
+.ContainerDraggable li
+{
+	font-size:11px;
+    float: left;
+    width: 100px;
+    height: 48px;
+    padding: 0.4em;
+    margin: 0 0.4em 0.4em 0;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    background-color: #FEC;
+    -webkit-border-radius: 6px;
+    box-shadow: 0 1px 0 #AAA;
+    border:1px dashed #FFBF00;
+} 
+
+
+.ContainerDraggable li.grouped {
+	background-color:#FC0;
+}
+
+.classDroppable li.grouped {
+	background-color:#FC0;
+}
+
+
+
+.classDraggable
+{
+	font-size:11px;
+    float: left;
+    width: 100px;
+    height: 48px;
+    padding: 0.4em;
+    margin: 0.2em 0.2em 0.2em 0.2em;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    background-color: #FEC;
+    -webkit-border-radius: 6px;
+    box-shadow: 0 1px 0 #AAA;
+}
+
+.classDroppablePrecooler
+{
+	background-color:#EEFFA2;
+}
+
+.classDroppable, .classDroppableWaste, .classDroppablePrecooler, .classDroppableRework
+{
+	width: 100%;
+    height: 130%;
+}
+    
+.classDroppable > li, .classDroppableWaste  > li, .classDroppablePrecooler > li,.classDroppableEmbarque > li, .classDroppableRework > li
+{
+	border: 1px solid #DDD;
+    color: #333;
+    -webkit-border-radius: 6px;
+    box-shadow: 0 1px 0 #AAA;
+    margin:none;
+}
+
+.classDroppableEmbarque
+{
+	padding:5px;
+}
+
+.classDroppable  li, .classDroppableWaste li, .classDroppablePrecooler li, .classDroppableEmbarque li, .classDroppableRework li
+{
+	font-size:11px;
+    float: left;
+    width: 100px;
+    height: 48px;
+    padding: 0.2em;
+    margin: 0.2em 0.2em 0.2em 0.2em;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    background-color: #FEC;
+    -webkit-border-radius: 6px;
+    box-shadow: 0 1px 0 #AAA;
+} 
+
+
+
+div.calendartitle   
+    {
+      display: table;
+      width: 100%;
+      height: 15px;
+      font-size: small;
+      text-align: center;
+    }
+
+
+div.calendartitleelement{  
+      display: block;
+      float: left;
+      margin-left: auto;
+      margin-right: auto;
+      width: 230px;
+      height: 255px;
+      margin:5px 20px 5px 5px;
+      background-color:#D4F2C2;
+      border:solid 1px black;
+    }
+
+div.calendartitleelement li
+{
+	font-size:11px;
+    float: left;
+    width: 100px;
+    height: 48px;
+    padding: 0.4em;
+    margin: 0 0.4em 0.4em 0;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    background-color: #FEC;
+    -webkit-border-radius: 6px;
+    box-shadow: 0 1px 0 #AAA;
+    border:1px dashed #FFBF00;
+} 
+
+.ui-widget-content li
+{
+    
+}
+
+.tblInternalFa
+{
+	margin:none;padding:0;width:100%; height:45px;
+	text-align:left;
+	
+}
+
+.tblInternalFa tr
+{
+	height:10px;
+	width:100%;
+}    
+
+.placeholder
+{
+	text-decoration:none;
+}
+    
+
+
+#dialog
+{
+	font-size:11px;
+	text-align:left;
+}
+
+#dialog table td
+{
+    text-align:left;
+    width:100px;
+}
+
+body { background:#fff; font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+.tdBorder
+{
+	border:solid 1px black;
+	width:40px;
+	height:40px;
+}
+
+.tdBorderBig
+{
+	border:solid 1px black;
+	width:88px;
+	height:44px;
+}
+
+.backGroundSelected
+{
+	background-color: #AAFE33;
+	font-size:15pt;
+}
+
+
+#divShowTable{width:100%;margin:0 auto; text-align:center;}
+
+
+body 
+{
+    font-family: 'MS Sans Serif', Geneva, sans-serif;
+    font-size: 11px;
+    color: #000; 
+    background-color: #FFF;
+}	
+
+.classDroppableWaste
+{
+	 border: 1px solid #cccccc; background: #D1E91C;
+}
+
+.classDroppableRework
+{
+	 border: 1px solid #cccccc; background:Gray;
+}
+
+
+.tableWareHouseClass{ float:left; padding:15px 35px 3px 0; text-align:center;}
+/*table { width: 150px; height: 50px; background-color: #F5F6CE;}
+img { float:right; margin: 0 0 0 0; width: 30px;} 
+label { font-size: 10px; font-weight:bold;}
+span { font-size: 10px; text-align:left;}
+
+*/
+
+
+
+
+
+
+.InstructionsH4
+{
+	font-size:16px;
+	font-weight:bold;
+	color:Gray;
+}
+
+
+.tableFillInfoBasic tr td
+{
+	padding:2px 2px 2px 2px;
+}
+
+
+.tableFillInfoBasic tr td .left
+{
+	text-align:left;
+}
+
+.tableFillInfoBasic tr td .right
+{
+	text-align:right;
+}
+
+
+.headerContainer{
+	margin:0px 0px 5px 0px;
+	text-align:center;					
+	padding:5px;
+	font-size:16px;			
+    border: 1px solid #ffffff; 
+    background: #464646 url(images/464646_40x100_textures_01_flat_100.png) 50% 50% repeat-x; 
+    color: #ffffff; 
+    font-weight: bold; 
+    line-height: 16px;
+    margin: 0 0 0.4em; 
+}
+
+.headerContainer h4{
+	color: #ffffff; 
+}
+
+.divSelectionMode
+{
+	float:right; background-color:#DBF7AB; width:100%; border: solid 1px black; border-bottom:none;
+}
+
+
+
+
+.Title
+{
+    color:  #000000;
+    font-size:13pt;
+    font-weight: 700;
+}
+
+.SubTitle
+{
+    color:  #7CB656;
+    font-size:12pt;
+}
+
+.SubInfo
+{
+    color:Gray;
+    font-size:12pt;
+}
+
+
+li > label
+{
+	top:-30px; 
+	position:relative; 
+	left:100px;
+}
+
+.internalWasteNotDrag
+    {
+    	background-color: Red;
+    }
+    
+    
+    
+    #divImage
+{
+    float:left;
+    width:60px;
+}
+
+#divMessage
+{
+     float:left;
+     padding-top:10px;
+}
+
+#divLogo
+{
+    float:left;
+    width:20px;
+    padding-left:10px;
+}
+
+#divTittle
+{
+     float:left;    
+}
+
+.ModalBackGround
+{
+    z-index: 10000;
+    width: 675px;
+    min-height: 100px;
+    border: 1px solid #666;
+    -moz-box-shadow: 0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px black;   
+}
+
+.modalShadowIE
+{
+    /* IE >= 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=14, Direction=135, Color='#111111')";
+    /* IE 5 to IE7*/
+     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=14, Direction=135, Color='#111111');
+     font-size:12pt;
+}
+
+.ModalBackGround h2
+ {
+	color:#5b5b5f;
+	margin:3px;
+}
+
+.cancelBUtton
+{
+    background-image: url(../../Common/Img/close.png);
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+}
+
+.cancelBUtton:hover
+{
+    background-image: url(../../Common/Img/closeHover.png);
+}
+
+.headerModal
+{
+    border: 1px solid #E78F08;
+    background: #F6A828 url(../../Common/Img/headerModal.png) 50% 50% repeat-x;
+    color: white;
+    font-weight: bold;
+    height: 25px;
+    padding-top: 10px;
+    /*Border radius for Mozzilla*/
+    -moz-border-radius: 7px 7px / 7px 7px;
+    /*Border raius for Chrome, Safari and Some IE9*/
+    border-radius: 7px 7px / 7px 7px;
+}
+
+.ui-widget-content 
+{
+    border: 1px solid #DDD;
+    background: #EEE url(../../Common/Img/background.png) 50% top repeat-x;
+    color: #333;
+    min-height: 110px;
+}
+
+.ui-widget-overlay
+{
+    background: #666 url(../../Common/Img/bgModal.png) 50% 50% repeat;
+    opacity: .50;
+}
+
+.imgLog
+{
+    width: 33px;
+    height: 18px;
+}
+

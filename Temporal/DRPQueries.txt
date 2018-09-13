@@ -1,0 +1,389 @@
+﻿
+  
+SELECT idUsuario FROM tblOwner
+  |
+
+SELECT 
+idActividadPrograma idActividad,
+idActividadProgramaLocal idActividadTab,
+idInvernadero,
+idEtapa,
+idCiclo,
+cantidadDeElementos,
+cast('0' as INTEGER) as semana,
+jornalesEstimados,
+minutosEstimados,
+esDirectriz,
+esInterplanting,
+borrado,
+aprobadaPor aprobadoPor,
+rechazadaPor rechazadoPor,
+usuarioModifica,
+surcoInicio,
+surcoFin,
+esColmena,
+estatus,
+UUID
+ FROM ActividadProgramaWppDos WHERE estatus <> 0;   
+
+Select  
+idActividadPeriodo idPeriodo,
+idActividadPeriodoLocal idPeriodoTab,
+idActividadPrograma idActividad,
+idActividadProgramaLocal idActividadTab,
+surcos ,
+inicio ,
+fin ,
+estatus ,
+UUID
+from ActividadPeriodoWppDos where estatus <> 0;   
+
+SELECT 
+idActividadNoProgramada ,
+idActividadNoProgramadaLocal idActividadNoProgramadaTab,
+idInvernadero ,
+idEtapa ,
+idCiclo ,
+razon ,
+comentario ,
+cantidadDeElementos ,
+semanaProgramacion ,
+anioProgramacion ,
+esInterplanting ,
+estatus ,
+UUID
+FROM ActividadNoProgramadaWppDos WHERE estatus <>0; 
+  
+SELECT 
+idAsociadoActividad idActividadAsociado,
+idActividadPrograma idActividad,
+idActividadProgramaLocal idActividadTab,
+idActividadPeriodoLocal idPeriodoTab,
+idActividadPeriodo idPeriodo,
+idAsociado ,
+ausente ,
+estatus 
+FROM ActividadAsociadosWppDos  WHERE estatus <> 0;   
+
+SELECT 
+idCosecha ,
+idCosechaLocal idCosechaTab,
+idActividadPrograma ,
+idActividadProgramaLocal idActividadProgramaTab,
+fechaInicio ,
+fechaFin ,
+cast('0' as INTEGER)  cantidadProduccion,
+estimadoMedioDia ,
+cerrarada ,
+estatus
+FROM CosechaWppDos WHERE estatus <> 0;   
+
+SELECT 
+idMerma ,
+idMermaLocal idmermaTab,
+idCosecha ,
+idCosechaLocal idCosechaTab,
+idRazon ,
+cantidad ,
+observacion ,
+estatus ,
+UUID 
+FROM MermaCosechaWppDos WHERE estatus <> 0;   
+
+SELECT 
+idFormaA ,
+idFormaALocal idFormaATab,
+idPrograma ,
+idProgramaLocal idProgramaTab,
+fechaFin ,
+fechaInicio ,
+prefijo ,
+dmcCalidad ,
+dmcMercado ,
+comentarios ,
+folio ,
+cerrado cerrada,
+estatus ,
+fechaFinTractorista ,
+fechaInicioTractorista ,
+storage ,
+UUID,
+Preharvest
+FROM FormaAWppDos WHERE estatus <> 0;   
+
+SELECT  
+idCapturaFormaA ,
+idCapturaFormaALocal idCapturaFormaATab,
+idAsociado,
+cajas,
+base seccion,
+idFormaA,
+idFormaALocal idFormaATab,
+ifnull(surco,0) surco,
+estatus,
+estimacion,
+UUID,
+fechaCaptura
+FROM CapturaFormaAWppDos WHERE estatus <> 0;   
+
+SELECT 
+idPlagaEnfermedadRemoto idPlagaEnfermedad,
+idPlagaEnfermedad idPlagaEnfermedadTab,
+idInvernadero,
+idPlaga,
+ifnull(surcoDe,0) surcoDe,
+ifnull(surcoA,0)surcoA,
+ubicacion,
+observaciones,
+ifnull(base,0) base,
+estado,
+nivelInfestacion,
+fechaCaptura,
+estatus,
+idPercance,
+idZona,
+UUID
+FROM CapturaPlagaEnfermedadWppDos WHERE estatus <> 0;   
+
+SELECT 
+idCheckList,
+idCheckListLocal,
+idInvernadero,
+idLiderCultivo,
+idLiderCosecha,
+idTipo,
+fechaElaboracion,
+observaciones,
+estatusAutorizado,
+cast('0' as INTEGER) usuarioModifica,
+'2017-01-01' fechaModifica,
+estatus,
+UUID
+FROM tblCheckList WHERE estatus <> 0;   
+
+SELECT 
+idCheckList,
+idCheckListLocal,
+idCheckCriterio,
+idCheckCriterioLocal,
+idCriterio,
+compromiso,
+cast('0' as INTEGER)  usuarioModifica,
+'2017-01-01' fechaModifica,
+estatus,
+UUID
+FROM tblCheckCriterio WHERE estatus <> 0;   
+
+
+SELECT
+ifnull(idEstimadoCajas,0) idEstimadoCajas,
+idEstimadoCajasLocal,
+idInvernadero,
+idLider,
+idCosecha,
+idCosechaLocal,
+surcos,
+semana,
+borrado,
+cast('0' as INTEGER)  UsuarioCaptura,
+cast('0' as INTEGER)  UsuarioModifica,
+fechaCaptura,
+fechaCaptura FechaModifica,
+estatus,
+UUID
+FROM tblEstimadoCajas WHERE estatus <> 0;   
+
+SELECT
+ifnull(idEstimadoCajasCaptura,0) idEstimadoCajasCaptura,
+idEstimadoCajasCapturaLocal,
+ifnull(idEstimadoCajas,0) idEstimadoCajas,
+idEstimadoCajasLocal,
+surco,
+cajas,
+estimado,
+fechaCaptura,
+fechaCaptura fechaModifica,
+borrado,
+estatus,
+idAsociado,
+asignado,
+UUID
+FROM tblEstimadoCajasCaptura WHERE estatus <> 0;   
+
+SELECT
+idTrasladoMermaSer idTrasladoMerma,
+idTrasladoMermaLocal,
+idFormaA,
+idFormaALocal,
+idRazon,
+cajas,
+comentarios,
+estatus,
+'' UUID
+FROM tblMermasTraslado WHERE estatus <> 0;
+
+ SELECT 
+  seccion ,
+  UUIDFormaA ,
+  UUID ,
+  estatus ,
+  borrado,
+  plantulas,
+  posicion
+  FROM tblSeccionPreharvest
+  WHERE estatus <> 0
+
+|
+
+ SELECT
+ idEmbarqueHeader,
+ idEmbarqueHeaderLocal idEmbarqueHeaderTab,
+ catEmbarque,
+ temperaturaInicio,
+ timestampCarga,
+ timestampCargaTerminada,
+ timestampSalida,
+ timestampFin,
+ idUsuarioCarga,
+ idPlanta,
+ nombreChofer,
+ placasCamion,
+ numCajaCamion,
+ selloIzquierdo,
+ selloDerecho,
+ rechazado,
+ comentarioRechazo,
+ timestampRechazo,
+ estatus,
+ QRPuerta,
+ offline,
+ idSubPlanta
+ FROM tblEmbarqueHeader WHERE estatus <> 0;   
+
+  SELECT
+  ifnull(idEmbarqueDestino,0) idEmbarqueDestino,
+  idEmbarqueDestinoLocal idEmbarqueDestinoTab,
+  idEmbarqueHeader,
+  idEmbarqueHeaderLocal idEmbarqueHeaderTab,
+  timestampLlegada,
+  timestampInicioDescarga,
+  timestampFinDescarga,
+  timestampSalida,
+  destino,
+  temperaturaInicio,
+  temperaturaFin,
+  idUsuarioDescarga,
+  idPlanta,
+  rechazado,
+  comentarioRechazo,
+  timestampRechazo,
+  estatus,
+  QRPuerta,
+  UUID,
+  catEmbarque,
+  idSubPlanta
+  FROM tblEmbarqueDestinos WHERE estatus <> 0;
+
+  SELECT
+   ifnull(idEmbarqueProducto,0) idEmbarqueProducto,
+  idEmbarqueProductoLocal idEmbarqueProductoTab,
+  idEmbarqueDestino,
+  idEmbarqueDestinoLocal idEmbarqueDestinoTab,
+  idCatEmbarqueDetail,
+  estatus,
+  UUID,
+  UUIDDestino
+  FROM tblEmbarqueProducto WHERE estatus <> 0;   
+
+  SELECT
+  ifnull(idEmbarqueFormaA,0) idEmbarqueFormaA,
+  idEmbarqueFormaALocal idEmbarqueFormaATab,
+  idEmbarqueProducto,
+  idEmbarqueProductoLocal idEmbarqueProductoTab,
+  folio,
+  dividido,
+  idFormaAEmpaque,
+  temperaturaInicio,
+  temperaturaFin,
+  horaCarga,
+  horaDescarga,
+  idPlantaDescargo,
+  estatus,
+  locacion,
+  UUIDProducto,
+  idEmbarqueDestino,
+  idEmbarqueDestinoLocal idEmbarqueDestinoTab
+  FROM tblEmbarqueFormasA WHERE estatus <> 0;   
+
+  SELECT
+  idEmbarqueHeader,
+  idEmbarqueHeaderLocal idEmbarqueHeaderTab,
+  idFolioEmpaque,
+  estatus
+  FROM tblEmbarqueFIFO WHERE estatus <> 3 AND estatus <> 0; 
+
+|
+
+ SELECT
+ idCaptura,
+ idCapturaLocal idCapturaTab,
+ Etiqueta,
+ Comentarios,
+ FechaCaptura,
+ NombreGrower,
+ Gerente,
+ Lider,
+ IdStatus,
+ IdInvernadero,
+ IdUsuarioCreacion,
+ IdUsuarioModifica,
+ IdUsuarioElimina,
+ FechaCreacion,
+ FechaModifica,
+ FechaElimina,
+ Plantacion,
+ Calificacion,
+ CalificacionCalculada,
+ UUID,
+ estatus
+ FROM tblGrowingCaptura WHERE estatus <> 0;   
+
+  SELECT
+  idCapturaGrupo,
+  idCapturaGrupoLocal idCapturaGrupoTab,
+  idCaptura,
+  idCapturaLocal idCapturaTab,
+  idGrowingGrupo,
+  Calificacion,
+  CalificacionCalculada,
+  UUID,
+  estatus
+  FROM tblGrowingCapturaGrupo WHERE estatus <> 0;   
+ 
+  SELECT
+  idCapturaParametroLocal idCapturaParametroTab,
+  idCapturaParametro,
+  idCapturaLocal idCapturaTab,
+  idCaptura,
+  idGrowingParametro,
+  Aplica,
+  UUID,
+  estatus
+  FROM tblGrowingCapturaParametro WHERE estatus <> 0;   
+ 
+  SELECT
+  idCapturaPropiedad,
+  idCapturaPropiedadLocal idCapturaPropiedadTab ,
+  idCaptura,
+  idCapturaLocal idCapturaTab,
+  idGrowingPropiedad,
+  Calificacion,
+  Cumplimiento,
+  idOpcionSeleccionada,
+  Texto,
+  Numero,
+  UUID,
+  estatus
+  FROM tblGrowingCapturaPropiedad WHERE estatus <> 0; 
+
+ 

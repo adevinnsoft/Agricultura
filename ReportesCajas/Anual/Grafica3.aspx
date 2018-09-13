@@ -1,0 +1,90 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Grafica3.aspx.cs" Inherits="Grafica3" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+      <!--[if lt IE 9]>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <![endif]-->
+        <!--[if gte IE 9]><!-->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <!--<![endif]-->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/globalize.min.js"></script>
+        <script type="text/javascript" src="http://cdn3.devexpress.com/jslib/15.2.10/js/dx.chartjs.js"></script>
+    
+    <script type="text/javascript">
+        /////---------------------------------------------------------------------------------------------------------------
+        
+        var dataSource = <%=convertido%>;
+        $(function () {//////////////////////////////////////////////////
+           
+            $("#container").dxChart({
+                dataSource: dataSource,
+                series: {
+                    argumentField: "semana",
+                    valueField: "totales",
+                    //name: "My oranges",
+                    type: "line",
+                    color: '#ffa500'
+                },
+                "export": {
+                    enabled: true
+                },
+                title: {
+                    text: "Produccion Total Nature Sweet"
+                },
+                tooltip: {
+                    enabled: true,
+                    customizeTooltip: function (arg) {
+                        return {
+                            text: arg.valueText
+                        };
+                    }
+                },
+                argumentAxis: {
+                    constantLines: [{
+                        value: 13,
+                        color: 'lightsalmon',
+                        width: 2,
+                        label: {
+                            text: 'Q1'
+                        }
+                    }, {
+                        value: 26,
+                        color: 'lightsalmon',
+                        width: 2,
+                        label: {
+                            text: 'Q2'
+                        }
+                    }, {
+                        value: 39,
+                        color: 'lightsalmon',
+                        width: 2,
+                        label: {
+                            text: 'Q3'
+                        }
+                    }]
+                }
+            });
+            ///////////////////////////////////////////////////////
+        });
+    </script>
+      <style>
+        
+        .ajuste {
+            float: left;
+            margin: 10px;
+            padding: 10px;
+            width: 500px;
+            height: 600px;
+            border: 1px solid black;
+        }</style>
+</head>
+<body>
+     <div id="container"></div>
+</body>
+</html>

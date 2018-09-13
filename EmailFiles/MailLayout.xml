@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- History - -
+
+
+Subject was modified according with the logo-->
+<Email>    
+    <Layout key="notification">
+        <From></From>
+        <Subject></Subject>
+        <HTMLBody>notification.htm</HTMLBody>
+        <Resources>
+            <Item Name="footerLogo" FileName="">
+                footerLogo
+            </Item>
+            <Item Name="logo" FileName="">
+                
+            </Item>
+        </Resources>
+    </Layout>
+</Email>
