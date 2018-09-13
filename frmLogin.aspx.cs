@@ -17,7 +17,7 @@ using System.Threading;
 public partial class frmLogin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
-    {
+    { 
         if (null != Session["Locale"])
         {
             //ddlLocale.SelectedValue = (string)Session["Locale"];
@@ -27,6 +27,7 @@ public partial class frmLogin : System.Web.UI.Page
     {
         if (false)//Request.Form["ddlLocale"] != null)
         {
+            //prueba de cambio 
             Session["Locale"] = Request.Form["ddlLocale"];
             //for UI elements
             UICulture = Request.Form["ddlLocale"];
